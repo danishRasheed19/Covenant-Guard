@@ -1,1 +1,4 @@
-ticker,company,cik,agreement_exhibit_url,agreement_filing_accession,agreement_date,amendments,covenant_types,threshold_disclosed_in_10k,actual_ratio_disclosed,exhibit_format,xbrl_tags_ok,structure_notes,score_0_to_12,status
+ticker,company,cik,agreement_exhibit_url,agreement_filing_accession,agreement_date,amendments,covenant_types,threshold_disclosed_in_10k,actual_ratio_disclosed,exhibit_format,xbrl_tags_ok,structure_notes,score_0_to_12,status,ground_truth_filing_url,ground_truth_values
+NUVR,"Nuvera Communications, Inc.",CIK 0000071557,https://www.sec.gov/Archives/edgar/data/71557/000151316224000083/exhibit10_1.htm,0001513162-24-000083,6/25/2024,,"max_total
+_leverage; debt service coverage (other_financial for now)",Y for leverage (6.00:1.00); DSCR TBD,Y (4.97 at 12/31/2025),,,dividend limits are not covenants,,,"https://www.sec.gov/Archives/edgar/data/71557/000143774926008309/nuvr20251231_10k.htm
+",12/31/2025: 4.97 vs max 6.00

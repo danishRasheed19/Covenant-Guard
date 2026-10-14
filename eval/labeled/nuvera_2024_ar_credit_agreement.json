@@ -1,0 +1,113 @@
+{
+  "company_name": "Nuvera Communications, Inc.",
+  "ticker": "NUVR",
+  "cik": "0000071557",
+  "agreement_title": "Amended and Restated Credit Agreement",
+  "agreement_date": "2024-06-21",
+  "is_amendment": false,
+  "filing_accession": "0001513162-24-000083",
+  "filing_date": "2024-06-25",
+  "exhibit_url": "https://www.sec.gov/Archives/edgar/data/71557/000151316224000083/exhibit10_1.htm",
+  "covenants": [
+    {
+      "covenant_id": "nuvr-2024-lev-001",
+      "covenant_type": "max_total_leverage",
+      "operator": "<=",
+      "unit": "ratio",
+      "threshold_schedule": [
+        {"effective_from": "2024-06-21", "value": 6.0},
+        {"effective_from": "2027-10-01", "value": 5.0},
+        {"effective_from": "2028-10-01", "value": 4.0}
+      ],
+      "numerator_term": "Indebtedness",
+      "denominator_term": "Consolidated EBITDA",
+      "test_frequency": "quarterly",
+      "measurement_basis": "trailing_four_quarters",
+      "definitions": [
+        {
+          "term": "Leverage Ratio",
+          "definition": "means, as of the end of any date of determination, the ratio of (a) all Indebtedness of the Borrower and its Subsidiaries determined on a Consolidated basis as of such date to (b) Consolidated EBITDA for the consecutive four fiscal quarters ending as of such date or most recently ended.",
+          "section": "Section 1.1",
+          "has_custom_adjustments": false,
+          "adjustment_notes": []
+        },
+        {
+          "term": "Consolidated EBITDA",
+          "definition": "means for any period of determination: the sum of (i) Consolidated Net Income, plus (ii) the following items, to the extent deducted in determining Consolidated Net Income: (a) total interest expense (including non-cash interest), (b) provision of income taxes or benefits, as the case may be, (c) depreciation and amortization expenses, (d) unrealized losses on financial derivatives recognized in accordance with SFAS No. 133, (e) extraordinary executive compensation, (f) transaction costs and expenses incurred in connection with any Permitted Acquisition or other Investment permitted hereunder, whether or not such Permitted Acquisition or other Investment is consummated, (g) pro forma “run rate” costs savings, operating expense reductions, operating improvements and synergies from operational changes and operational initiatives (including, related to a Permitted Acquisition to the extent reasonably identifiable), in each case, projected in good faith to result from actions taken or to be taken within the first eighteen (18) months (or such longer period as the Administrative Agent may agree in its sole discretion) following the consummation of a Specified Transaction or the implementation of an operational change or initiative, minus (iii) the following items, to the extent included in determining consolidated net income: (x) unrealized gains on financial derivatives recognized in accordance with SFAS No. 133, (y) interest income, dividends and patronage income, and (z) income from unconsolidated subsidiaries, partnerships and joint ventures.  Consolidated EBITDA shall be measured for the then most recently completed four fiscal quarters, adjusted to give effect to any acquisition, sale or other disposition, directly or through a subsidiary, of any operation or business (or any portion thereof) during the period of calculation as if such acquisition, sale or other disposition occurred on the first day of such period of calculation.  For the purposes of calculating Consolidated EBITDA for any relevant four fiscal quarter period, notwithstanding the foregoing, amounts added back in the calculation of Consolidated EBITDA for any applicable measurement period pursuant to clauses (f) and (g) of this definition shall not, in the aggregate, exceed $500,000 for such period (calculated prior to giving effect to such addbacks for such period in the calculation of Consolidated EBITDA).",
+          "section": "Section 1.1",
+          "has_custom_adjustments": true,
+          "adjustment_notes": ["Starts from Consolidated Net Income, which itself excludes some joint-venture and restricted-subsidiary income",
+            "Adds back interest expense (including non-cash), income taxes, and depreciation and amortization",
+            "Adds back unrealized derivative losses and extraordinary executive compensation",
+            "Adds back acquisition/investment transaction costs and projected run-rate savings, capped together at $500,000 per period",
+            "Subtracts unrealized derivative gains, interest income, dividend and patronage income, and income from unconsolidated subsidiaries and joint ventures",
+            "Measured over the latest four fiscal quarters, pro forma for acquisitions and dispositions"]
+        },
+        {
+          "term": "Indebtedness",
+          "definition":"means, as to any Person at a particular time, without duplication, all of the following, whether or not included as indebtedness or liabilities in accordance with GAAP:(a) all obligations of such Person for borrowed money (including the principal amount of any outstanding Loans) and all obligations of such Person evidenced by bonds, debentures, notes, loan agreements or other similar instruments; (b) all direct or contingent obligations of such Person arising under letters of credit (including standby and commercial), bankers’ acceptances, bank guaranties, surety bonds and similar instruments; (c) all net obligations of such Person under each Hedge Agreement to which it is a party (provided, that the amount of any net obligation under any Hedge Agreement on any date shall be deemed to be the Hedge Termination Value thereof as of such date); (d) all obligations of such Person to pay the deferred purchase price of property or services to the extent required to be recognized under GAAP (other than trade accounts payable in the ordinary course of business and, in each case, not past due for more than 90 days after the date on which such trade account payable was created unless contested in good faith); (e) obligations (excluding prepaid interest thereon) secured by a Lien on property owned or being purchased by such Person (including indebtedness arising under conditional sales or other title retention agreements), whether or not such obligations shall have been assumed by such Person or is limited in recourse; (f) all obligations of such Person under Capital Leases and all its Synthetic Lease Obligations; (g) all obligations of such Person to purchase, redeem, retire, defease or otherwise make any payment in respect of any Equity Interest in such Person or any other Person, valued, in the case of a redeemable preferred interest, at the greater of its voluntary or involuntary liquidation preference plus accrued and unpaid dividends; (h) the net present value of future extraordinary executive compensation; and (i) all fixed payment obligations of any Person under any Guarantee of such Person in respect of any of the foregoing",
+          "section": "Section 1.1",
+          "has_custom_adjustments": true,
+          "adjustment_notes": ["Broader than balance-sheet debt: includes letters of credit, net hedge termination value, capital leases, and guarantees",
+            "Includes deferred purchase price and certain equity redemption obligations",
+            "Includes present value of future extraordinary executive compensation, which public data won't show",
+            "No cash netting seen in the Leverage Ratio definition, so this looks like gross debt"]
+        }
+      ],
+      "citation": {
+        "section": "Section 8.1",
+        "quote": "The Loan Parties shall maintain at all times, measured as of the last day of each fiscal quarter, a Leverage Ratio of the Borrower of not more than the ratios set forth below for the periods specified below"
+      },
+      "ambiguities": [
+        "First threshold step uses the agreement date (2024-06-21) as effective_from; 'Closing Date' is defined as the day the Section 4.1 conditions were satisfied",
+        "Consolidated EBITDA includes run-rate cost savings and synergies, which are management projections and cannot be reproduced from public data",
+        "Consolidated EBITDA starts from Consolidated Net Income, which excludes some joint-venture and restricted-subsidiary income; XBRL net income will differ",
+        "Indebtedness includes net hedge termination value and the present value of future extraordinary executive compensation, which are not directly available in public XBRL data",
+        "Last threshold step (4.00) has no end date; it runs through the Maturity Date (June 21, 2029)"
+      ],
+      "review_status": "needs_review"
+    },
+    {
+      "covenant_id": "nuvr-2024-dscr-001",
+      "covenant_type": "other_financial",
+      "operator": ">=",
+      "unit": "ratio",
+      "threshold_schedule": [
+        {"value": 2}
+      ],
+      "numerator_term": "Consolidated EBITDA",
+      "denominator_term": "Debt Service",
+      "test_frequency": "quarterly",
+      "measurement_basis": "trailing_four_quarters",
+      "definitions": [
+        {
+          "term": "Debt Service Coverage Ratio",
+        "definition":"means the ratio derived by dividing (a) the result of (i) Consolidated EBITDA plus (ii) cash interest, dividends and patronage income minus (iii) cash income taxes, dividends and distributions by (b) Debt Service, in each case, for the then most recently completed four fiscal quarters.",
+        "section":"Section 1.1",
+        "has_custom_adjustments": false,
+          "adjustment_notes": []
+        },
+        {
+          "term": "Consolidated EBITDA",
+        "definition":"means for any period of determination: the sum of (i) Consolidated Net Income, plus (ii) the following items, to the extent deducted in determining Consolidated Net Income: (a) total interest expense (including non-cash interest), (b) provision of income taxes or benefits, as the case may be, (c) depreciation and amortization expenses, (d) unrealized losses on financial derivatives recognized in accordance with SFAS No. 133, (e) extraordinary executive compensation, (f) transaction costs and expenses incurred in connection with any Permitted Acquisition or other Investment permitted hereunder, whether or not such Permitted Acquisition or other Investment is consummated, (g) pro forma “run rate” costs savings, operating expense reductions, operating improvements and synergies from operational changes and operational initiatives (including, related to a Permitted Acquisition to the extent reasonably identifiable), in each case, projected in good faith to result from actions taken or to be taken within the first eighteen (18) months (or such longer period as the Administrative Agent may agree in its sole discretion) following the consummation of a Specified Transaction or the implementation of an operational change or initiative, minus (iii) the following items, to the extent included in determining consolidated net income: (x) unrealized gains on financial derivatives recognized in accordance with SFAS No. 133, (y) interest income, dividends and patronage income, and (z) income from unconsolidated subsidiaries, partnerships and joint ventures.  Consolidated EBITDA shall be measured for the then most recently completed four fiscal quarters, adjusted to give effect to any acquisition, sale or other disposition, directly or through a subsidiary, of any operation or business (or any portion thereof) during the period of calculation as if such acquisition, sale or other disposition occurred on the first day of such period of calculation.  For the purposes of calculating Consolidated EBITDA for any relevant four fiscal quarter period, notwithstanding the foregoing, amounts added back in the calculation of Consolidated EBITDA for any applicable measurement period pursuant to clauses (f) and (g) of this definition shall not, in the aggregate, exceed $500,000 for such period (calculated prior to giving effect to such addbacks for such period in the calculation of Consolidated EBITDA).",
+        "section":"Section 1.1",
+        "has_custom_adjustments": false,
+          "adjustment_notes": []
+        },
+        {
+          "term": "Debt Service",
+        "definition":"means the sum of: (a) all principal payments scheduled (and excluding any mandatory or voluntary prepayments with respect to the Secured Obligations) to be made on Indebtedness (or scheduled reductions in commitments on lines of credit to the extent such reductions would cause the repayment of principal amounts then outstanding under such lines) plus (b) cash interest expense, each for the then most recently completed four fiscal quarters.",
+        "section":"Section 1.1",
+        "has_custom_adjustments": false,
+          "adjustment_notes": []
+        }
+      ],
+      "citation": {
+        "section": "Section 8.3",
+        "quote": "The Loan Parties shall maintain at all times, measured as of the last day of each fiscal quarter,a Debt Service Coverage Ratio of the Borrower of not less than 2.00:1.00."
+      },
+      "ambiguities": ["Debt service coverage is not a V1 type: stored for extraction recall, not computed"],
+      "review_status": "needs_review"
+    }
+  ]
+}
