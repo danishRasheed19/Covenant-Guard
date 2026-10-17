@@ -1,0 +1,167 @@
+{
+  "company_name": "Via Renewables, Inc.",
+  "ticker": "VIASP",
+  "cik": "0001606268",
+  "agreement_title": "Credit Agreement",
+  "agreement_date": "2026-05-06",
+  "is_amendment": false,
+  "filing_accession": "0001606268-26-000029",
+  "filing_date": "2025-05-06",
+  "exhibit_url": "https://www.sec.gov/Archives/edgar/data/1606268/000160626826000029/creditagreement-viarenewab.htm",
+  "covenants": [
+    {
+      "covenant_id": "viasp-2026-lev-001",
+      "covenant_type": "max_total_leverage",
+      "operator": "<=",
+      "unit": "ratio",
+      "threshold_schedule": [
+        {"value": 3.0}
+      ],
+      "numerator_term": "Indebtedness (excluding Subordinated Debt permitted by Section 7.13(c) and the Effective Amount of the L/C Obligations) plus gross amounts reserved for potential civil and regulatory liabilities",
+       "denominator_term": "Adjusted EBITDA",
+      "test_frequency": "quarterly",
+      "measurement_basis": "trailing_four_quarters",
+      "definitions": [
+  {
+    "term": "Total Leverage Ratio",
+    "definition": "means, as of any date of determination, the ratio of (a) the sum of (i) all Indebtedness of the Loan Parties on a Consolidated basis, on such date (excluding (A) the Subordinated Debt permitted by Section 7.13(c) and (B) the Effective Amount of the L/C Obligations) plus (ii) gross amounts reserved for potential civil and regulatory liabilities in accordance with GAAP (or, to the extent any Loan Party is, as of such date, subject to the public filing requirements of the SEC, the gross amounts reserved for potential civil and regulatory liabilities identified in the most recent Form 10-K or 10-Q filing filed by Parent with the SEC) to (b) Adjusted EBITDA for the most recent twelve (12) month period then ended.",
+    "section": "Section 1.01",
+    "has_custom_adjustments": true,
+    "adjustment_notes": [
+      "Adds gross amounts reserved for potential civil and regulatory liabilities to the debt side",
+      "Excludes Subordinated Debt permitted by Section 7.13(c) and the Effective Amount of L/C Obligations",
+      "Reserve figure comes from the latest 10-K or 10-Q if the company is subject to SEC filing requirements, otherwise from GAAP reserves"
+    ]
+  },
+  {
+    "term": "Adjusted EBITDA",
+    "definition": "means EBITDA of the Loan Parties on a Consolidated basis for the most recent twelve (12) month period, plus (a) to the extent deducted in determining EBITDA, (i) non-cash compensation expenses, (ii) non-recurring expenses, and (iii) unrealized net loss under Swap Contracts to the extent that there are offsetting forward physical purchase and sales contracts that do not qualify as derivatives under GAAP and have not been recorded on the income statement, minus (b) to the extent included in determining EBITDA for such period, (i) non-recurring revenue, (ii) customer acquisition costs incurred in the current period, and (iii) unrealized net gain under Swap Contracts to the extent that there are offsetting forward physical purchase and sales contracts that do not qualify as derivatives under GAAP; provided that, Adjusted EBITDA shall be subject to pro forma adjustments for Permitted Acquisitions and Dispositions assuming that such transactions had occurred on the first day of the determination period. Co-Borrowers shall provide to the Agent supporting documentation as reasonably requested by Agent. All calculations of Adjusted EBITDA shall be satisfactory to the Agent in its sole discretion in all respects.",
+    "section": "Section 1.01",
+    "has_custom_adjustments": true,
+    "adjustment_notes": [
+      "Starts from a separate defined term, EBITDA, over the most recent twelve-month period",
+      "Adds back non-cash compensation expenses and non-recurring expenses, to the extent deducted",
+      "Adds back unrealized net losses under Swap Contracts where offsetting forward physical contracts do not qualify as derivatives and are not recorded on the income statement",
+      "Subtracts non-recurring revenue and customer acquisition costs incurred in the current period, to the extent included",
+      "Subtracts unrealized net gains under Swap Contracts, with the same offsetting-contract condition",
+      "Pro forma adjustments for Permitted Acquisitions and Dispositions, as if they occurred on the first day of the period",
+      "Calculations must be satisfactory to the Agent in its sole discretion"
+    ]
+  },
+  {
+    "term": "Indebtedness",
+    "definition": "means, as to any Person at a particular time, without duplication, all of the following, whether or not included as indebtedness or liabilities in accordance with GAAP: (a)all obligations of such Person for borrowed money and all obligations of such Person evidenced by bonds, debentures, notes, loan agreements or other similar instruments; (b)all direct or contingent obligations of such Person arising under letters of credit (including standby and commercial), bankers’ acceptances, bank guaranties, surety bonds and similar instruments; (c)net obligations of such Person under any Swap Contract; (d)all obligations of such Person to pay the deferred purchase price of property or services (excluding (i) trade accounts payable in the ordinary course of business that are not paid for more than 90 days after the date on which such trade account payable was due, and (ii) obligations that are being contested in good faith by appropriate proceedings diligently conducted and adequate reserves in accordance with GAAP are being maintained by any Co-Borrower); (e)indebtedness (excluding prepaid interest thereon) secured by a Lien on property owned or being purchased by such Person (including indebtedness arising under conditional sales or other title retention agreements), whether or not such indebtedness shall have been assumed by such Person or is limited in recourse; (f)Capital Lease Obligations and Synthetic Lease Obligations; (g)all obligations of such Person to purchase, redeem, retire, defease or otherwise make any payment in respect of any equity interest in such Person or any other Person, valued, in the case of a redeemable preferred interest, at the greater of its voluntary or involuntary liquidation preference plus accrued and unpaid dividends or distributions; and (h)all guaranties of such Person in respect of any of the foregoing, but only to the extent that any such guaranty does not guaranty the payment of amounts owed or which may be owed by a Co-Borrower or is not otherwise included as Indebtedness of a Co-Borrower. For all purposes hereof, the Indebtedness of any Person shall (i) include the Indebtedness of any partnership or joint venture (other than a joint venture that is itself a corporation or limited liability company) in which such Person is a general partner or a joint venturer, unless, and to the extent that, such Indebtedness is non-recourse to such Person, and (ii) exclude any loans from an insurance company or an insurance premium finance company to finance all or any portion of the premium on any insurance policy maintained by any Co-Borrower or any of its Restricted Subsidiaries, but only to the extent consistent with past practice. The amount of any Capital Lease or Synthetic Lease Obligation as of any date shall be deemed to be the amount of Indebtedness attributable in respect thereof as of such date. The amount of any net obligation under any Swap Contract on any date shall be deemed to be the Swap Termination Value thereof as of such date if the Swap Termination Value shows that the Loan Parties on a Consolidated basis is the party owing such amount.",
+    "section": "Section 1.01",
+    "has_custom_adjustments": true,
+    "adjustment_notes": [
+      "Broader than balance-sheet debt, and counted whether or not GAAP records it as debt",
+      "Includes letters of credit, bank guaranties and surety bonds (the ratio then excludes the effective amount of L/C obligations)",
+      "Includes net obligations under Swap Contracts, valued at Swap Termination Value when the Loan Parties owe the amount",
+      "Includes deferred purchase price, secured indebtedness, capital and synthetic lease obligations",
+      "Includes equity redemption obligations and certain guaranties",
+      "Includes debt of partnerships and joint ventures where the Person is a general partner or joint venturer, unless non-recourse",
+      "Excludes insurance premium finance loans, to the extent consistent with past practice"
+    ]
+  },
+  {
+    "term": "EBITDA",
+    "definition": "means the sum of Consolidated Net Income of the Loan Parties on a Consolidated basis for the most recent twelve (12) month period, plus (a) the following to the extent included in calculating such Consolidated Net Income: (i) Consolidated Interest Expense for such period, (ii) all income taxes (including any franchise taxes to the extent based upon net income) for such period, (iii) all depreciation and amortization (including amortization of intangible assets, debt issue costs and amortization under ASC Rule 718), (iv) any loss from the disposition of assets, (v) any extraordinary losses, (vi) any non-cash losses resulting from mark to market activity as a result of the implementation of ASC 815, and (vii) other non-cash charges (including any provision for the reduction in the carrying value of assets recorded in accordance with GAAP, but excluding any non-cash charges that constitute an accrual of or reserve for future cash charges) for such period, minus (b) the following to the extent included in calculating such Consolidated Net Income: (i) all income tax credits for such period, (ii) any gain from the disposition of assets, (iii) any extraordinary gains, (iv) any non-cash gains resulting from mark to market activity as a result of the implementation of ASC 815, and (v) all non-cash items of income (other than account receivables and similar items arising from the normal course of business and reflected as income under accrual methods of accounting consistent with past practices) for such period, plus (c) cash dividends or cash distributions received by the Loan Parties from any Person other than a Restricted Subsidiary in which Parent or any of its Subsidiaries has an ownership interest; provided that (i) such cash dividends or cash distributions consist solely of proceeds generated solely from operations in the ordinary course of business and (ii) in no event shall EBITDA attributable to cash dividends or cash distributions from such Persons exceed EBITDA of the Loan Parties on a Consolidated basis (without giving effect to any such cash dividends or cash distributions).",
+    "section": "Section 1.01",
+    "has_custom_adjustments": false,
+    "adjustment_notes": [
+  "Starts from Consolidated Net Income of the Loan Parties on a Consolidated basis (a separate defined term) for the most recent twelve months",
+  "Each add-back and deduction below applies only to the extent it was included in calculating Consolidated Net Income",
+  "Adds Consolidated Interest Expense for such period",
+  "Adds all income taxes (including any franchise taxes to the extent based upon net income) for such period",
+  "Adds all depreciation and amortization (including amortization of intangible assets, debt issue costs and amortization under ASC Rule 718)",
+  "Adds any loss from the disposition of assets",
+  "Adds any extraordinary losses",
+  "Adds any non-cash losses resulting from mark to market activity as a result of the implementation of ASC 815",
+  "Adds other non-cash charges (including any provision for the reduction in the carrying value of assets recorded in accordance with GAAP, but excluding any non-cash charges that constitute an accrual of or reserve for future cash charges) for such period",
+  "Subtracts all income tax credits for such period",
+  "Subtracts any gain from the disposition of assets",
+  "Subtracts any extraordinary gains",
+  "Subtracts any non-cash gains resulting from mark to market activity as a result of the implementation of ASC 815",
+  "Subtracts all non-cash items of income (other than account receivables and similar items arising from the normal course of business and reflected as income under accrual methods of accounting consistent with past practices) for such period",
+  "Adds cash dividends or cash distributions received by the Loan Parties from any Person other than a Restricted Subsidiary in which Parent or any of its Subsidiaries has an ownership interest",
+  "The cash dividends add-back counts only proceeds generated solely from operations in the ordinary course of business",
+  "The cash dividends add-back is capped: EBITDA attributable to these dividends cannot exceed EBITDA of the Loan Parties without them"
+]
+  }
+],
+      "citation": {
+        "section": "Section 7.09",
+        "quote": "Parent shall not permit the Total Leverage Ratio as of the last day of any calendar month, commencing with the month ending April 30, 2026, to be more than 3.00 to 1.00."
+      },
+      "ambiguities": [
+  "Numerator adds gross reserves for civil and regulatory liabilities; the source is the latest 10-K or 10-Q if the company is subject to SEC filing requirements, otherwise GAAP reserves",
+  "All Adjusted EBITDA calculations must be satisfactory to the Agent in its sole discretion, so the covenant value cannot be fully determined from public data",
+  "Adjusted EBITDA starts from a separate defined term, EBITDA, which must be read alongside it",
+  "Non-recurring expenses and revenue adjustments are judgment-based, with no stated test"
+    ],
+      "review_status": "needs_review"
+    },
+    {
+      "covenant_id": "viasp-2026-fccr-001",
+      "covenant_type": "other_financial",
+      "operator": ">=",
+      "unit": "ratio",
+      "threshold_schedule": [
+        {"value": 1.25}
+      ],
+      "numerator_term": "Adjusted EBITDA minus Taxes paid in cash, Restricted Payments made pursuant to Section 7.15(c), and earnout payments paid in cash",
+      "denominator_term": "Consolidated Interest Expense (other than paid-in-kind interest on Subordinated Debt) plus current maturities of long-term Indebtedness of the type described in clauses (a), (b) and (f) of the Indebtedness definition (excluding Obligations)",
+      "test_frequency": "quarterly",
+      "measurement_basis": "trailing_four_quarters",
+      "definitions": [
+        {
+          "term": "Fixed Charge Coverage Ratio",
+          "definition": "means the ratio of (a) the difference of the following calculated solely with respect to the Loan Parties on a Consolidated basis for the most recent twelve (12) month period: (i) Adjusted EBITDA minus (ii) Taxes paid in cash minus, (iii) Restricted Payments made pursuant to Section 7.15(c) minus, (iv) earnout payments paid in cash, to (b) the sum of the following calculated solely with respect to the Loan Parties on a Consolidated basis for the most recent twelve (12) month period, without duplication: (i) Consolidated Interest Expense (other than interest paid-in-kind in respect of any Subordinated Debt), plus (ii) current maturities of long-term Indebtedness of the type described in clauses (a), (b) and (f) of such defined term (excluding Obligations, even if the Expiration Date is within a year of the date of determination).",
+          "section": "Section 1.01",
+          "has_custom_adjustments": true,
+          "adjustment_notes": [
+             "Numerator is a difference: Adjusted EBITDA minus cash taxes paid, minus Restricted Payments made pursuant to Section 7.15(c), minus earnout payments paid in cash",
+    "Denominator is a sum, without duplication: Consolidated Interest Expense (excluding paid-in-kind interest on Subordinated Debt) plus current maturities of long-term Indebtedness of the types in clauses (a), (b) and (f)",
+    "Current maturities exclude Obligations, even if the Expiration Date is within a year",
+    "Measured solely for the Loan Parties on a Consolidated basis for the most recent twelve months",
+    "Inherits every custom adjustment in Adjusted EBITDA"
+          ]
+        },
+        {
+          "term": "Adjusted EBITDA",
+          "definition": "means EBITDA of the Loan Parties on a Consolidated basis for the most recent twelve (12) month period, plus (a) to the extent deducted in determining EBITDA, (i) non-cash compensation expenses, (ii) non-recurring expenses, and (iii) unrealized net loss under Swap Contracts to the extent that there are offsetting forward physical purchase and sales contracts that do not qualify as derivatives under GAAP and have not been recorded on the income statement, minus (b) to the extent included in determining EBITDA for such period, (i) non-recurring revenue, (ii) customer acquisition costs incurred in the current period, and (iii) unrealized net gain under Swap Contracts to the extent that there are offsetting forward physical purchase and sales contracts that do not qualify as derivatives under GAAP; provided that, Adjusted EBITDA shall be subject to pro forma adjustments for Permitted Acquisitions and Dispositions assuming that such transactions had occurred on the first day of the determination period. Co-Borrowers shall provide to the Agent supporting documentation as reasonably requested by Agent. All calculations of Adjusted EBITDA shall be satisfactory to the Agent in its sole discretion in all respects.",
+          "section": "Section 1.01",
+          "has_custom_adjustments": true,
+          "adjustment_notes": [
+            "Starts from a separate defined term, EBITDA, over the most recent twelve-month period",
+      "Adds back non-cash compensation expenses and non-recurring expenses, to the extent deducted",
+      "Adds back unrealized net losses under Swap Contracts where offsetting forward physical contracts do not qualify as derivatives and are not recorded on the income statement",
+      "Subtracts non-recurring revenue and customer acquisition costs incurred in the current period, to the extent included",
+      "Subtracts unrealized net gains under Swap Contracts, with the same offsetting-contract condition",
+      "Pro forma adjustments for Permitted Acquisitions and Dispositions, as if they occurred on the first day of the period",
+      "Calculations must be satisfactory to the Agent in its sole discretion"
+          ]
+        },
+        {
+          "term": "Consolidated Net Income",
+          "definition": " means the net income (or deficit) of the Loan Parties on a Consolidated basis for the most recent twelve (12) month period determined in accordance with GAAP consistently applied after eliminating earnings or losses attributable to outstanding minority interests and excluding the net earnings of any Person other than a Restricted Subsidiary in which Parent or any of its Restricted Subsidiaries has an ownership interest.",
+          "section": "Section 1.01",
+          "has_custom_adjustments": true,
+          "adjustment_notes": [
+             "Net income (or deficit) of the Loan Parties on a Consolidated basis for the most recent twelve months, under GAAP consistently applied",
+    "Eliminates earnings or losses attributable to outstanding minority interests",
+    "Excludes net earnings of any Person other than a Restricted Subsidiary in which Parent or any Restricted Subsidiary has an ownership interest"
+          ]
+        }
+      ],
+      "citation": {
+        "section": "Section 7.09",
+        "quote": "Parent shall not permit the Fixed Charge Coverage Ratio as of the last day of any calendar month, commencing with the month ending April 30, 2026, to be less than 1.25 to 1.00."
+      },
+      "ambiguities": [
+        "Fixed charge coverage is not a V1 type: stored for extraction recall, not computed"
+      ],
+      "review_status": "needs_review"
+    }
+  ]
+}
