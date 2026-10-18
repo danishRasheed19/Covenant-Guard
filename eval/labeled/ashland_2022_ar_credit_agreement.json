@@ -1,0 +1,185 @@
+{
+  "company_name": "Ashland Inc. (formerly Ashland Global Holdings Inc.)",
+  "ticker": "ASH",
+  "cik": "0001674862",
+  "agreement_title": "Amended and Restated Credit Agreement",
+  "agreement_date": "2022-07-22",
+  "is_amendment": false,
+  "filing_accession": "0000950157-22-000804",
+  "filing_date": "2022-07-22",
+  "exhibit_url": "https://www.sec.gov/Archives/edgar/data/1674862/000095015722000804/ex10-1.htm",
+  "covenants": [
+    {
+      "covenant_id": "ash-2022-netlev-001",
+      "covenant_type": "max_total_leverage",
+      "operator": "<=",
+      "unit": "ratio",
+      "threshold_schedule": [
+        {
+          "value": 4.0
+        }
+      ],
+      "numerator_term": "Consolidated Indebtedness minus unrestricted cash and Cash Equivalents",
+      "denominator_term": "Consolidated EBITDA",
+      "test_frequency": "quarterly",
+      "measurement_basis": "trailing_four_quarters",
+      "definitions": [
+        {
+          "term": "Consolidated Net Leverage Ratio",
+          "definition": " means, as of any date of determination, the ratio of (a) Consolidated Indebtedness as of such date minus the amount of Ashland’s and its Subsidiaries’ unrestricted cash and Cash Equivalents as of such date that are or would be included on a balance sheet of Ashland and its Subsidiaries as of such date to (b) Consolidated EBITDA of Ashland and its Subsidiaries on a consolidated basis for the most recently completed Measurement Period for which financial statements have been delivered pursuant to Section 6.01.",
+          "section": "Section 1.01",
+          "has_custom_adjustments": true,
+          "adjustment_notes": [
+            "Subtracts the unrestricted cash and Cash Equivalents of Ashland and its Subsidiaries from Consolidated Indebtedness, so this is a net ratio",
+            "Uses Consolidated EBITDA for the most recently completed Measurement Period for which financial statements have been delivered under Section 6.01"
+          ]
+        },
+        {
+          "term": "Consolidated EBITDA",
+          "definition": "means, for any Measurement Period, an amount equal to Consolidated Net Income for such Measurement Period plus (a) proceeds of business interruption insurance received during such period, but only to the extent not included in Consolidated Net Income plus (b) the following to the extent deducted in calculating such Consolidated Net Income, but without duplication and in each case for such Measurement Period:  (i) Consolidated Interest Charges (not calculated on a Pro Forma Basis), (ii) the provision for Federal, State, local and foreign income taxes payable, (iii) depreciation and amortization expense, (iv) asset impairment charges, (v) expenses reimbursed by third parties (including through insurance and indemnity payments), (vi) fees and expenses incurred in connection with any Permitted Receivables Facility, any proposed or actual issuance of any Indebtedness or Equity Interests (including upfront fees and original issue discount), or any proposed or actual acquisitions, investments, asset sales or divestitures permitted hereunder, in each case that are expensed, (vii) non-cash restructuring and integration charges and cash restructuring and integration charges; provided that the aggregate amount of all cash restructuring and integration charges shall not exceed $100,000,000 in any twelve month period, (viii) non-cash stock expense and non-cash equity compensation expense, (ix) other expenses or losses, including purchase accounting entries such as the inventory adjustment to fair value, reducing such Consolidated Net Income which do not represent a cash item in such period or any future period, (x) expenses or losses in respect of discontinued operations of Ashland or any of its Subsidiaries, (xi) any unrealized losses attributable to the application of “mark to market” accounting in respect of Swap Contracts, (xii) with respect to any Disposition for which pro forma effect is required to be given pursuant to the definition of “Pro Forma Basis,” any loss thereon and (xiii) all fees, expenses and other costs incurred in connection with the Reorganization and minus (c) the following to the extent included in calculating such Consolidated Net Income, but without duplication and in each case for such Measurement Period:  (i) Federal, State, local and foreign income tax credits, (ii) all non-cash gains or other items increasing Consolidated Net Income, (iii) gains in respect of discontinued operations of Ashland or any of its Subsidiaries, (iv) any unrealized gains for such period attributable to the application of “mark to market” accounting in respect of Swap Contracts and (v) with respect to any Disposition for which pro forma effect is required to be given pursuant to the definition of “Pro Forma Basis,” any gain thereon.  For all purposes hereunder, Consolidated EBITDA shall be calculated on a Pro Forma Basis unless otherwise specified.",
+          "section": "Section 1.01",
+          "has_custom_adjustments": true,
+          "adjustment_notes": [
+            "Starts from Consolidated Net Income for the Measurement Period (the most recent four fiscal quarters)",
+            "Adds proceeds of business interruption insurance received, to the extent not already in net income",
+            "Adds back, to the extent deducted: Consolidated Interest Charges (not on a pro forma basis), income tax provision, depreciation and amortization, and asset impairment charges",
+            "Adds back expenses reimbursed by third parties, including insurance and indemnity payments",
+            "Adds back fees and expenses of any Permitted Receivables Facility, debt or equity issuance, and acquisitions, investments, asset sales or divestitures",
+            "Adds back non-cash restructuring and integration charges, and cash restructuring and integration charges capped at $100,000,000 in any twelve-month period",
+            "Adds back non-cash stock and equity compensation expense",
+            "Adds back other non-cash expenses or losses, including purchase accounting entries such as inventory fair value adjustments",
+            "Adds back expenses or losses from discontinued operations, unrealized mark-to-market losses on Swap Contracts, losses on Dispositions requiring pro forma effect, and costs of the Reorganization",
+            "Subtracts income tax credits, non-cash gains and other non-cash items increasing net income, gains from discontinued operations, unrealized mark-to-market gains on Swap Contracts, and gains on Dispositions requiring pro forma effect",
+            "Calculated on a Pro Forma Basis unless otherwise specified"
+          ]
+        },
+        {
+          "term": "Consolidated Indebtedness",
+          "definition": "means, at any date of determination, for Ashland and its Subsidiaries on a consolidated basis, the sum of, without duplication (a) the outstanding principal amount of all obligations (as calculated under GAAP), whether current or long-term, for borrowed money (including Obligations in respect of the Loans hereunder), reimbursement obligations for amounts drawn under letters of credit and all obligations evidenced by bonds, debentures, notes, loan agreements or other similar instruments, (b) [reserved], (c) all direct (but, for the avoidance of doubt, not contingent) obligations arising under bankers’ acceptances and bank guaranties, (d) [reserved], (e) all Attributable Indebtedness, and (f) without duplication, all Guarantees with respect to outstanding Indebtedness of the types specified in clauses (a) through (e) above of Persons other than Ashland or any Subsidiary.  For purposes hereof, the Consolidated Indebtedness of Ashland and the Subsidiaries shall include any of the items in clauses (a) through (f) above of any other entity (including any partnership in which Ashland or any consolidated Subsidiary is a general partner) to the extent Ashland or such consolidated Subsidiary is liable therefor as a result of such Person's ownership interest in or other relationship with such entity, except to the extent the terms of that item expressly provide that such Person is not liable therefor.  For all purposes hereunder, Consolidated Indebtedness shall (i) be calculated on a Pro Forma Basis unless otherwise specified, (ii) not include the Defeased Debt and (iii) include all outstandings of Ashland and its Subsidiaries under any Permitted Receivables Facility (but excluding the intercompany obligations owed by a Special Purpose Finance Subsidiary to Ashland or any other Subsidiary in connection therewith).  Notwithstanding the foregoing, the principal amount outstanding at any time of any Indebtedness included in Consolidated Indebtedness issued with original issue discount shall be the principal amount of such Indebtedness less the remaining unamortized portion of the original issue discount of such Indebtedness at such time as determined in conformity with GAAP, but such Indebtedness shall be deemed incurred only as of the date of original issuance thereof.",
+          "section": "Section 1.01",
+          "has_custom_adjustments": true,
+          "adjustment_notes": [
+            "Includes outstanding principal of borrowed money, bonds, notes, and drawn letter of credit reimbursement obligations",
+            "Includes direct (not contingent) obligations under bankers' acceptances and bank guaranties",
+            "Includes Attributable Indebtedness (capitalized and synthetic lease obligations)",
+            "Includes Guarantees of such Indebtedness of Persons outside the group",
+            "Includes the debt of partnerships where Ashland or a Subsidiary is a general partner, to the extent liable",
+            "Includes all outstandings under any Permitted Receivables Facility",
+            "Excludes Defeased Debt, and debt issued with original issue discount is counted net of unamortized discount",
+            "Calculated on a Pro Forma Basis unless otherwise specified"
+          ]
+        },
+        {
+          "term": "Consolidated Net Income",
+          "definition": "means, at any date of determination, the net income (or loss) of  Ashland and its Subsidiaries on a consolidated basis for the most recently completed Measurement Period; provided that Consolidated Net Income shall exclude (a) the net income of any Subsidiary during such Measurement Period to the extent that the declaration or payment of dividends or similar distributions by such Subsidiary of such income is not permitted by operation of the terms of its Organization Documents or any agreement, instrument or Law applicable to such Subsidiary during such Measurement Period (unless such restrictions on dividends or similar distributions have been legally and effectively waived), except that Ashland’s equity in any net loss of any such Subsidiary for such Measurement Period shall be included in determining Consolidated Net Income, (b) any after-tax income (or after-tax loss) for such Measurement Period of any Person if such Person is not a Subsidiary, except that Ashland ’s equity in such income of any such Person for such Measurement Period shall be included in Consolidated Net Income up to the aggregate amount of cash actually distributed by such Person during such Measurement Period to Ashland or a Subsidiary as a dividend or other distribution (and in the case of a dividend or other distribution to a Subsidiary, such Subsidiary is not precluded from further distributing such amount to Ashland as described in clause (a) of this proviso), (c) any after-tax gain or after-tax loss realized as a result of the cumulative effect of a change in accounting principles or the implementation of new accounting standards related to revenue and lease accounting, (d) any after-tax gain or after-tax loss attributable to any foreign currency hedging arrangements or currency fluctuations, (e) after-tax extinguishment charges relating to the early extinguishment of Indebtedness and obligations under Swap Contracts and after-tax extinguishment charges relating to upfront fees and original issue discount on Indebtedness, (f) any pension or other post-retirement after-tax gain or after-tax expense for such Measurement Period, (g) fees, expenses and non-recurring charges relating to the Transactions and (h) any environmental reserve adjustments related to the Environmental Trust; provided, further, that Consolidated Net Income shall be reduced by (i) the amount of any cash payments made during such Measurement Period relating to pension and other post-retirement costs (except for any payments made in respect of the funding of pension plans in excess of the amount of required regulatory contributions for such Measurement Period (as reasonably determined by Ashland)) and (ii) the aggregate amount of cash payments in excess of $25,000,000 made during such Measurement Period and relating to the funding of the Environmental Trust (except for any cash contributed from the proceeds of real estate sales (as reasonably determined by Ashland and its Subsidiaries)).",
+          "section": "Section 1.01",
+          "has_custom_adjustments": true,
+          "adjustment_notes": [
+            "Excludes net income of any Subsidiary restricted from paying dividends, though Ashland's equity in such a Subsidiary's net loss is included",
+            "Excludes after-tax income or loss of non-Subsidiary Persons, except equity income up to cash actually distributed",
+            "Excludes after-tax effects of accounting changes (revenue and lease accounting), foreign currency hedging and currency fluctuations, debt extinguishment, and pension or post-retirement items",
+            "Excludes fees, expenses and non-recurring charges relating to the Transactions, and environmental reserve adjustments related to the Environmental Trust",
+            "Reduced by cash payments for pension and post-retirement costs (except funding above required contributions)",
+            "Reduced by cash payments above $25,000,000 in the period for funding the Environmental Trust (except from real estate sale proceeds)"
+          ]
+        }
+      ],
+      "citation": {
+        "section": "Section 7.11",
+        "quote": "Permit the Consolidated Net Leverage Ratio as of the end of any fiscal quarter of Ashland to be greater than 4.00:1.00."
+      },
+      "ambiguities": [
+        "This label covers only the July 22, 2022 agreement; it was amended and restated in its entirety by a Second Amended and Restated Credit Agreement dated May 28, 2026",
+        "Covenant EBITDA differs from the EBITDA and Adjusted EBITDA that Ashland reconciles in its non-GAAP disclosures, so public figures will not reproduce it exactly",
+        "Consolidated EBITDA contains judgment-based add-backs (non-cash and other non-cash items, asset impairment, third-party reimbursed expenses, transaction fees) with no stated test",
+        "Pro forma adjustments for acquisitions and dispositions depend on transaction details that public filings do not provide directly",
+        "The 4.00 threshold comes from Ashland's 10-K disclosures and is checked against Section 7.11 by the fill script; the script warns if 4.00 is not in the extracted clause",
+        "Consolidated Indebtedness includes outstandings under any Permitted Receivables Facility, which may not appear as debt on the balance sheet"
+      ],
+      "review_status": "needs_review"
+    },
+    {
+      "covenant_id": "ash-2022-icr-001",
+      "covenant_type": "min_interest_coverage",
+      "operator": ">=",
+      "unit": "ratio",
+      "threshold_schedule": [
+        {
+          "value": 3.0
+        }
+      ],
+      "numerator_term": "Consolidated EBITDA",
+      "denominator_term": "Consolidated Interest Charges",
+      "test_frequency": "quarterly",
+      "measurement_basis": "trailing_four_quarters",
+      "definitions": [
+        {
+          "term": "Consolidated Interest Coverage Ratio",
+          "definition": " means, at any date of determination, the ratio of (a) Consolidated EBITDA of Ashland and its Subsidiaries on a consolidated basis to (b) Consolidated Interest Charges, in each case for the most recently completed Measurement Period for which financial statements have been delivered pursuant to Section 6.01.",
+          "section": "Section 1.01",
+          "has_custom_adjustments": false,
+          "adjustment_notes": []
+        },
+        {
+          "term": "Consolidated EBITDA",
+          "definition": "means, for any Measurement Period, an amount equal to Consolidated Net Income for such Measurement Period plus (a) proceeds of business interruption insurance received during such period, but only to the extent not included in Consolidated Net Income plus (b) the following to the extent deducted in calculating such Consolidated Net Income, but without duplication and in each case for such Measurement Period:  (i) Consolidated Interest Charges (not calculated on a Pro Forma Basis), (ii) the provision for Federal, State, local and foreign income taxes payable, (iii) depreciation and amortization expense, (iv) asset impairment charges, (v) expenses reimbursed by third parties (including through insurance and indemnity payments), (vi) fees and expenses incurred in connection with any Permitted Receivables Facility, any proposed or actual issuance of any Indebtedness or Equity Interests (including upfront fees and original issue discount), or any proposed or actual acquisitions, investments, asset sales or divestitures permitted hereunder, in each case that are expensed, (vii) non-cash restructuring and integration charges and cash restructuring and integration charges; provided that the aggregate amount of all cash restructuring and integration charges shall not exceed $100,000,000 in any twelve month period, (viii) non-cash stock expense and non-cash equity compensation expense, (ix) other expenses or losses, including purchase accounting entries such as the inventory adjustment to fair value, reducing such Consolidated Net Income which do not represent a cash item in such period or any future period, (x) expenses or losses in respect of discontinued operations of Ashland or any of its Subsidiaries, (xi) any unrealized losses attributable to the application of “mark to market” accounting in respect of Swap Contracts, (xii) with respect to any Disposition for which pro forma effect is required to be given pursuant to the definition of “Pro Forma Basis,” any loss thereon and (xiii) all fees, expenses and other costs incurred in connection with the Reorganization and minus (c) the following to the extent included in calculating such Consolidated Net Income, but without duplication and in each case for such Measurement Period:  (i) Federal, State, local and foreign income tax credits, (ii) all non-cash gains or other items increasing Consolidated Net Income, (iii) gains in respect of discontinued operations of Ashland or any of its Subsidiaries, (iv) any unrealized gains for such period attributable to the application of “mark to market” accounting in respect of Swap Contracts and (v) with respect to any Disposition for which pro forma effect is required to be given pursuant to the definition of “Pro Forma Basis,” any gain thereon.  For all purposes hereunder, Consolidated EBITDA shall be calculated on a Pro Forma Basis unless otherwise specified.",
+          "section": "Section 1.01",
+          "has_custom_adjustments": true,
+          "adjustment_notes": [
+            "Starts from Consolidated Net Income for the Measurement Period (the most recent four fiscal quarters)",
+            "Adds proceeds of business interruption insurance received, to the extent not already in net income",
+            "Adds back, to the extent deducted: Consolidated Interest Charges (not on a pro forma basis), income tax provision, depreciation and amortization, and asset impairment charges",
+            "Adds back expenses reimbursed by third parties, including insurance and indemnity payments",
+            "Adds back fees and expenses of any Permitted Receivables Facility, debt or equity issuance, and acquisitions, investments, asset sales or divestitures",
+            "Adds back non-cash restructuring and integration charges, and cash restructuring and integration charges capped at $100,000,000 in any twelve-month period",
+            "Adds back non-cash stock and equity compensation expense",
+            "Adds back other non-cash expenses or losses, including purchase accounting entries such as inventory fair value adjustments",
+            "Adds back expenses or losses from discontinued operations, unrealized mark-to-market losses on Swap Contracts, losses on Dispositions requiring pro forma effect, and costs of the Reorganization",
+            "Subtracts income tax credits, non-cash gains and other non-cash items increasing net income, gains from discontinued operations, unrealized mark-to-market gains on Swap Contracts, and gains on Dispositions requiring pro forma effect",
+            "Calculated on a Pro Forma Basis unless otherwise specified"
+          ]
+        },
+        {
+          "term": "Consolidated Interest Charges",
+          "definition": "means, for any Measurement Period, the excess of (a) the sum, without duplication, of (i) all interest, premium payments, debt discount, fees, charges and related expenses in connection with borrowed money (including capitalized interest) or in connection with the deferred purchase price of assets, in each case to the extent treated as interest in accordance with GAAP, (ii) cash payments made in respect of obligations referred to in clause (b)(ii) below, (iii) the portion of rent expense under Capitalized Leases that is treated as interest in accordance with GAAP, in each case, of or by Ashland and its Subsidiaries on a consolidated basis for such Measurement Period and (iv) all interest, premium payments, debt discount, fees, charges and related expenses in connection with the Permitted Receivables Facility, minus (b) to the extent included in such consolidated interest expense for such Measurement Period, the sum, without duplication, of (i) extinguishment charges relating to the early extinguishment of Indebtedness or obligations under Swap Contracts, (ii) noncash amounts attributable to the amortization of debt discounts or accrued interest payable in kind, (iii) noncash amounts attributable to amortization or write-off of capitalized interest or other financing costs paid in a previous period, (iv) interest income treated as such in accordance with GAAP and (v) fees and expenses, original issue discount and upfront fees, in each case of or by Ashland and its Subsidiaries on a consolidated basis for such Measurement Period.  For all purposes hereunder, Consolidated Interest Charges shall be calculated on a Pro Forma Basis unless otherwise specified.",
+          "section": "Section 1.01",
+          "has_custom_adjustments": true,
+          "adjustment_notes": [
+            "Starts from interest, premium payments, debt discount, fees and charges on borrowed money or deferred purchase price, to the extent treated as interest under GAAP",
+            "Adds the portion of capitalized lease rent treated as interest, and interest and charges under the Permitted Receivables Facility",
+            "Subtracts debt extinguishment charges, non-cash amortization of debt discount or paid-in-kind interest, non-cash amortization or write-off of capitalized financing costs, interest income, and fees, original issue discount and upfront fees",
+            "Calculated on a Pro Forma Basis unless otherwise specified"
+          ]
+        },
+        {
+          "term": "Consolidated Net Income",
+          "definition": " means, at any date of determination, the net income (or loss) of  Ashland and its Subsidiaries on a consolidated basis for the most recently completed Measurement Period; provided that Consolidated Net Income shall exclude (a) the net income of any Subsidiary during such Measurement Period to the extent that the declaration or payment of dividends or similar distributions by such Subsidiary of such income is not permitted by operation of the terms of its Organization Documents or any agreement, instrument or Law applicable to such Subsidiary during such Measurement Period (unless such restrictions on dividends or similar distributions have been legally and effectively waived), except that Ashland’s equity in any net loss of any such Subsidiary for such Measurement Period shall be included in determining Consolidated Net Income, (b) any after-tax income (or after-tax loss) for such Measurement Period of any Person if such Person is not a Subsidiary, except that Ashland ’s equity in such income of any such Person for such Measurement Period shall be included in Consolidated Net Income up to the aggregate amount of cash actually distributed by such Person during such Measurement Period to Ashland or a Subsidiary as a dividend or other distribution (and in the case of a dividend or other distribution to a Subsidiary, such Subsidiary is not precluded from further distributing such amount to Ashland as described in clause (a) of this proviso), (c) any after-tax gain or after-tax loss realized as a result of the cumulative effect of a change in accounting principles or the implementation of new accounting standards related to revenue and lease accounting, (d) any after-tax gain or after-tax loss attributable to any foreign currency hedging arrangements or currency fluctuations, (e) after-tax extinguishment charges relating to the early extinguishment of Indebtedness and obligations under Swap Contracts and after-tax extinguishment charges relating to upfront fees and original issue discount on Indebtedness, (f) any pension or other post-retirement after-tax gain or after-tax expense for such Measurement Period, (g) fees, expenses and non-recurring charges relating to the Transactions and (h) any environmental reserve adjustments related to the Environmental Trust; provided, further, that Consolidated Net Income shall be reduced by (i) the amount of any cash payments made during such Measurement Period relating to pension and other post-retirement costs (except for any payments made in respect of the funding of pension plans in excess of the amount of required regulatory contributions for such Measurement Period (as reasonably determined by Ashland)) and (ii) the aggregate amount of cash payments in excess of $25,000,000 made during such Measurement Period and relating to the funding of the Environmental Trust (except for any cash contributed from the proceeds of real estate sales (as reasonably determined by Ashland and its Subsidiaries)).",
+          "section": "Section 1.01",
+          "has_custom_adjustments": true,
+          "adjustment_notes": [
+            "Excludes net income of any Subsidiary restricted from paying dividends, though Ashland's equity in such a Subsidiary's net loss is included",
+            "Excludes after-tax income or loss of non-Subsidiary Persons, except equity income up to cash actually distributed",
+            "Excludes after-tax effects of accounting changes (revenue and lease accounting), foreign currency hedging and currency fluctuations, debt extinguishment, and pension or post-retirement items",
+            "Excludes fees, expenses and non-recurring charges relating to the Transactions, and environmental reserve adjustments related to the Environmental Trust",
+            "Reduced by cash payments for pension and post-retirement costs (except funding above required contributions)",
+            "Reduced by cash payments above $25,000,000 in the period for funding the Environmental Trust (except from real estate sale proceeds)"
+          ]
+        }
+      ],
+      "citation": {
+        "section": "Section 7.11",
+        "quote": "Permit the Consolidated Interest Coverage Ratio as of the end of any fiscal quarter of Ashland to be less than 3.00:1.00."
+      },
+      "ambiguities": [
+        "This label covers only the July 22, 2022 agreement; it was amended and restated in its entirety by a Second Amended and Restated Credit Agreement dated May 28, 2026",
+        "Covenant EBITDA differs from the EBITDA and Adjusted EBITDA that Ashland reconciles in its non-GAAP disclosures, so public figures will not reproduce it exactly",
+        "Consolidated EBITDA contains judgment-based add-backs (non-cash and other non-cash items, asset impairment, third-party reimbursed expenses, transaction fees) with no stated test",
+        "Pro forma adjustments for acquisitions and dispositions depend on transaction details that public filings do not provide directly",
+        "The 3.00 threshold comes from Ashland's 10-K disclosures and is checked against Section 7.11 by the fill script; the script warns if 3.00 is not in the extracted clause",
+        "Consolidated Interest Charges nets out interest income and non-cash items, so it differs from reported interest expense",
+        "Consolidated EBITDA adds back Consolidated Interest Charges not calculated on a pro forma basis, while the ratio's denominator is pro forma unless otherwise specified"
+      ],
+      "review_status": "needs_review"
+    }
+  ]
+}
