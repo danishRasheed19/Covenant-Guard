@@ -16,10 +16,11 @@
       "unit": "usd",
       "threshold_schedule": [
         {
+          "effective_from": "2024-06-30",
           "value": 10000000.0
         }
       ],
-      "measure_term": "Minimum Liquidity",
+      "measure_term": "Liquidity",
       "test_frequency": "monthly",
       "measurement_basis": "point_in_time",
       "definitions": [
@@ -29,8 +30,8 @@
           "section": "Section 1.01",
           "has_custom_adjustments": true,
           "adjustment_notes": [
-            "Add Availibilty and Qualified Cash",
-            "Subtract Trade payables that are outstanding for more than 60 days"
+            "Adds Availability and Qualified Cash",
+            "Subtracts trade payables that are outstanding for more than 60 days after the date such payable was due"
           ]
         },
         {
@@ -48,8 +49,8 @@
         "quote": "Commencing with June 30, 2024, as of the last day of each calendar month, permit the Liquidity of the Company and its Subsidiaries to be less than $10,000,000"
       },
       "ambiguities": [
-        "Company-reported liquidity net of the $10,000,000 minimum equals cash plus unused revolver availability minus $10,000,000 at 12/31/2025, 3/31/2026 and 6/30/2026 (my arithmetic from the filings); confirm against the Liquidity definition",
-        "The source is Exhibit 10.1 to the December 19, 2024 8-K: Amendment No. 1 with a full conformed copy of the Financing Agreement attached; redlined text may appear merged in the HTML, so check pasted text for stray fragments",
+        "Ground truth is approximate: the filings report cash plus unused revolver availability, while covenant Liquidity is Availability plus Qualified Cash minus trade payables more than 60 days past due; the 12/31/2025, 3/31/2026 and 6/30/2026 headroom figures are derived from the reported amounts, not the covenant definition",
+        "The source is Exhibit 10.1 to the December 19, 2024 8-K: Amendment No. 1 with a full conformed copy of the Financing Agreement attached; the parser drops struck-through text, and all pasted text matches the parsed copy",
         "The agreement has been amended once (Amendment No. 1, December 19, 2024, adding $15,000,000 of term loans for the Alline Acquisition); check Item 15 of the latest 10-K for later amendments"
       ],
       "review_status": "needs_review"
@@ -60,14 +61,35 @@
       "operator": "<=",
       "unit": "ratio",
       "threshold_schedule": [
-    {"effective_from": "2024-09-30", "value": 6.2},
-    {"effective_from": "2024-12-31", "value": 5.75},
-    {"effective_from": "2025-09-30", "value": 5.5},
-    {"effective_from": "2026-09-30", "value": 5.25},
-    {"effective_from": "2027-09-30", "value": 5.0},
-    {"effective_from": "2028-03-31", "value": 4.75},
-    {"effective_from": "2028-12-31", "value": 4.5}
-  ],
+        {
+          "effective_from": "2024-09-30",
+          "value": 6.2
+        },
+        {
+          "effective_from": "2024-12-31",
+          "value": 5.75
+        },
+        {
+          "effective_from": "2025-09-30",
+          "value": 5.5
+        },
+        {
+          "effective_from": "2026-09-30",
+          "value": 5.25
+        },
+        {
+          "effective_from": "2027-09-30",
+          "value": 5.0
+        },
+        {
+          "effective_from": "2028-03-31",
+          "value": 4.75
+        },
+        {
+          "effective_from": "2028-12-31",
+          "value": 4.5
+        }
+      ],
       "numerator_term": "Indebtedness",
       "denominator_term": "Consolidated EBITDA",
       "test_frequency": "quarterly",
@@ -79,12 +101,12 @@
           "section": "Section 1.01",
           "has_custom_adjustments": true,
           "adjustment_notes": [
-    "Numerator counts only Indebtedness described in clauses (a), (b), (c), (e) and (f) of the Indebtedness definition; all other clauses are left out",
-    "Within clause (b), excludes Indebtedness described in clause (i) of Permitted Indebtedness",
-    "Letters of credit count only at their undrawn face amount, and only to the extent the contingent obligations are not cash collateralized",
-    "No deduction for cash appears in the definition, so this is a gross ratio, not a net one",
-    "Denominator is Consolidated EBITDA of the Person and its Subsidiaries for the same period"
-  ]
+            "Numerator counts only Indebtedness described in clauses (a), (b), (c), (e) and (f) of the Indebtedness definition; all other clauses are left out",
+            "Within clause (b), excludes Indebtedness described in clause (i) of Permitted Indebtedness",
+            "Letters of credit count only at their undrawn face amount, and only to the extent the contingent obligations are not cash collateralized",
+            "No deduction for cash appears in the definition, so this is a gross ratio, not a net one",
+            "Denominator is Consolidated EBITDA of the Person and its Subsidiaries for the same period"
+          ]
         },
         {
           "term": "Consolidated EBITDA",
@@ -130,21 +152,21 @@
           "has_custom_adjustments": true,
           "adjustment_notes": [
             "Counted without duplication for any Person",
-    "Clause (a): all indebtedness for borrowed money (counts in the Total Leverage Ratio)",
-    "Clause (b): deferred purchase price of property or services, excluding ordinary-course trade payables and accruals not more than 60 days past due; earn-outs and purchase price adjustments count only if they appear as liabilities on the balance sheet and are unpaid after becoming due (counts in the ratio, except debt described in clause (i) of Permitted Indebtedness)",
-    "Clause (c): bonds, debentures, notes and similar instruments (counts in the ratio)",
-    "Clause (d): conditional sale and title retention obligations (does not count in the ratio)",
-    "Clause (e): Capitalized Lease Obligations (counts in the ratio)",
-    "Clause (f): letters of credit, acceptances and similar facilities, except to the extent cash collateralized (counts in the ratio)",
-    "Clause (g): Hedging Agreement obligations after enforceable netting (does not count in the ratio)",
-    "Clause (h): receivables factoring and sales, synthetic leases, tax ownership or operating leases and other off-balance sheet financing (does not count in the ratio)",
-    "Clause (i): Contingent Obligations for the debt in the other clauses (does not count in the ratio)",
-    "Clause (j): Disqualified Equity Interests (does not count in the ratio)",
-    "Clause (k): obligations of another Person secured by a Lien on the Person's property, valued at the lesser of the unpaid amount and the property's fair market value when recourse is limited (does not count in the ratio)",
-    "Includes the Indebtedness of any partnership or joint venture in which the Person is a general partner or joint venturer",
-    "Excludes ordinary-course trade payables, accruals and customer deposits, payroll accruals, purchase price holdbacks, workers' compensation and similar obligations, seller non-compete or consulting obligations, and customary supplier title retention",
-    "Excludes unsecured intercompany debt owed by a Loan Party to a non-Loan-Party Restricted Subsidiary that is subject to an Intercompany Subordination Agreement, and intercompany advances from ordinary-course cash management, tax and accounting"
-  ]
+            "Clause (a): all indebtedness for borrowed money (counts in the Total Leverage Ratio)",
+            "Clause (b): deferred purchase price of property or services, excluding ordinary-course trade payables and accruals not more than 60 days past due; earn-outs and purchase price adjustments count only if they appear as liabilities on the balance sheet and are unpaid after becoming due (counts in the ratio, except debt described in clause (i) of Permitted Indebtedness)",
+            "Clause (c): bonds, debentures, notes and similar instruments (counts in the ratio)",
+            "Clause (d): conditional sale and title retention obligations (does not count in the ratio)",
+            "Clause (e): Capitalized Lease Obligations (counts in the ratio)",
+            "Clause (f): letters of credit, acceptances and similar facilities, except to the extent cash collateralized (counts in the ratio)",
+            "Clause (g): Hedging Agreement obligations after enforceable netting (does not count in the ratio)",
+            "Clause (h): receivables factoring and sales, synthetic leases, tax ownership or operating leases and other off-balance sheet financing (does not count in the ratio)",
+            "Clause (i): Contingent Obligations for the debt in the other clauses (does not count in the ratio)",
+            "Clause (j): Disqualified Equity Interests (does not count in the ratio)",
+            "Clause (k): obligations of another Person secured by a Lien on the Person's property, valued at the lesser of the unpaid amount and the property's fair market value when recourse is limited (does not count in the ratio)",
+            "Includes the Indebtedness of any partnership or joint venture in which the Person is a general partner or joint venturer",
+            "Excludes ordinary-course trade payables, accruals and customer deposits, payroll accruals, purchase price holdbacks, workers' compensation and similar obligations, seller non-compete or consulting obligations, and customary supplier title retention",
+            "Excludes unsecured intercompany debt owed by a Loan Party to a non-Loan-Party Restricted Subsidiary that is subject to an Intercompany Subordination Agreement, and intercompany advances from ordinary-course cash management, tax and accounting"
+          ]
         }
       ],
       "citation": {
@@ -155,7 +177,7 @@
         "The 3.75 Total Leverage Ratio levels in the Applicable Margin pricing grid set interest rates and are not covenant thresholds",
         "The term loans accrue paid-in-kind interest (Applicable PIK Amount in the pricing grid), which increases debt over time",
         "Consolidated EBITDA contains judgment-based add-backs (non-recurring items, non-cash charges, restructuring and integration costs) limited by a Shared Cap that steps down from 12.5% to 10% of EBITDA, so public figures cannot reproduce it exactly",
-        "The source is Exhibit 10.1 to the December 19, 2024 8-K: Amendment No. 1 with a full conformed copy of the Financing Agreement attached; redlined text may appear merged in the HTML, so check pasted text for stray fragments",
+        "The source is Exhibit 10.1 to the December 19, 2024 8-K: Amendment No. 1 with a full conformed copy of the Financing Agreement attached; the parser drops struck-through text, and all pasted text matches the parsed copy",
         "The agreement has been amended once (Amendment No. 1, December 19, 2024, adding $15,000,000 of term loans for the Alline Acquisition); check Item 15 of the latest 10-K for later amendments"
       ],
       "review_status": "needs_review"
@@ -166,10 +188,22 @@
       "operator": ">=",
       "unit": "ratio",
       "threshold_schedule": [
-  {"effective_from": "2024-09-30", "value": 1.5},
-  {"effective_from": "2024-12-31", "value": 1.6},
-  {"effective_from": "2025-03-31", "value": 1.7},
-  {"effective_from": "2026-06-30", "value": 1.75}
+        {
+          "effective_from": "2024-09-30",
+          "value": 1.5
+        },
+        {
+          "effective_from": "2024-12-31",
+          "value": 1.6
+        },
+        {
+          "effective_from": "2025-03-31",
+          "value": 1.7
+        },
+        {
+          "effective_from": "2025-06-30",
+          "value": 1.75
+        }
       ],
       "numerator_term": "Consolidated EBITDA minus Capital Expenditures minus income taxes paid or payable in cash",
       "denominator_term": "Scheduled cash principal payments on Indebtedness (with an equivalent permanent reduction in commitments) plus Consolidated Net Interest Expense paid or payable in cash plus cash dividends, distributions and purchases, redemptions or retirements of Equity Interests",
@@ -182,15 +216,15 @@
           "section": "Section 1.01",
           "has_custom_adjustments": true,
           "adjustment_notes": [
-    "Numerator is Consolidated EBITDA minus Capital Expenditures minus income taxes paid or payable in cash, for the period",
-    "Denominator is the sum of (i) scheduled cash principal payments, (ii) Consolidated Net Interest Expense paid or payable in cash, and (iii) cash dividends, distributions and equity purchases, redemptions or retirements",
-    "Principal counts only if scheduled to be paid in cash during the period and matched by an equivalent permanent reduction in commitments",
-    "Payments under the Existing Credit Facility are excluded from the principal and interest clauses",
-    "Equity payments count in the denominator, except dividends or distributions paid by a Loan Party to another Loan Party and proceeds of any Cure Right",
-    "Inherits every adjustment in Consolidated EBITDA",
-    "For the Company and its Subsidiaries, principal and interest are annualized in early periods: the quarter ended September 30, 2024 actual times 4, the two quarters ended December 31, 2024 times 2, and the three quarters ended March 31, 2025 times 4/3",
-    "The annualization applies only to the principal and interest clauses, not to the numerator or the equity payments clause"
-  ]
+            "Numerator is Consolidated EBITDA minus Capital Expenditures minus income taxes paid or payable in cash, for the period",
+            "Denominator is the sum of (i) scheduled cash principal payments, (ii) Consolidated Net Interest Expense paid or payable in cash, and (iii) cash dividends, distributions and equity purchases, redemptions or retirements",
+            "Principal counts only if scheduled to be paid in cash during the period and matched by an equivalent permanent reduction in commitments",
+            "Payments under the Existing Credit Facility are excluded from the principal and interest clauses",
+            "Equity payments count in the denominator, except dividends or distributions paid by a Loan Party to another Loan Party and proceeds of any Cure Right",
+            "Inherits every adjustment in Consolidated EBITDA",
+            "For the Company and its Subsidiaries, principal and interest are annualized in early periods: the quarter ended September 30, 2024 actual times 4, the two quarters ended December 31, 2024 times 2, and the three quarters ended March 31, 2025 times 4/3",
+            "The annualization applies only to the principal and interest clauses, not to the numerator or the equity payments clause"
+          ]
         },
         {
           "term": "Consolidated EBITDA",
@@ -222,7 +256,7 @@
           "section": "Section 1.01",
           "has_custom_adjustments": true,
           "adjustment_notes": [
-            "Gross interest expense, including interest paid to affiliates, minus interest income and hedging gains, plus hedging losses and upfront hedging costs (my summary from an earlier read; confirm when you paste)",
+            "Gross interest expense, including interest paid to affiliates, minus interest income and hedging gains, plus hedging losses and upfront hedging costs",
             "The Fixed Charge Coverage Ratio counts it only to the extent paid or payable in cash"
           ]
         }
@@ -234,7 +268,7 @@
       "ambiguities": [
         "Fixed charge coverage is not a V1 type: stored for extraction recall, not computed",
         "Consolidated EBITDA contains judgment-based add-backs (non-recurring items, non-cash charges, restructuring and integration costs) limited by a Shared Cap that steps down from 12.5% to 10% of EBITDA, so public figures cannot reproduce it exactly",
-        "The source is Exhibit 10.1 to the December 19, 2024 8-K: Amendment No. 1 with a full conformed copy of the Financing Agreement attached; redlined text may appear merged in the HTML, so check pasted text for stray fragments",
+        "The source is Exhibit 10.1 to the December 19, 2024 8-K: Amendment No. 1 with a full conformed copy of the Financing Agreement attached; the parser drops struck-through text, and all pasted text matches the parsed copy",
         "The agreement has been amended once (Amendment No. 1, December 19, 2024, adding $15,000,000 of term loans for the Alline Acquisition); check Item 15 of the latest 10-K for later amendments"
       ],
       "review_status": "needs_review"

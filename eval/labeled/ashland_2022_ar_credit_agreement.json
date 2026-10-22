@@ -93,7 +93,7 @@
         "Covenant EBITDA differs from the EBITDA and Adjusted EBITDA that Ashland reconciles in its non-GAAP disclosures, so public figures will not reproduce it exactly",
         "Consolidated EBITDA contains judgment-based add-backs (non-cash and other non-cash items, asset impairment, third-party reimbursed expenses, transaction fees) with no stated test",
         "Pro forma adjustments for acquisitions and dispositions depend on transaction details that public filings do not provide directly",
-        "The 4.00 threshold comes from Ashland's 10-K disclosures and is checked against Section 7.11 by the fill script; the script warns if 4.00 is not in the extracted clause",
+        "The 4.00 threshold was first taken from Ashland's 10-K disclosures and is confirmed in Section 7.11(a)",
         "Consolidated Indebtedness includes outstandings under any Permitted Receivables Facility, which may not appear as debt on the balance sheet"
       ],
       "review_status": "needs_review"
@@ -175,7 +175,7 @@
         "Covenant EBITDA differs from the EBITDA and Adjusted EBITDA that Ashland reconciles in its non-GAAP disclosures, so public figures will not reproduce it exactly",
         "Consolidated EBITDA contains judgment-based add-backs (non-cash and other non-cash items, asset impairment, third-party reimbursed expenses, transaction fees) with no stated test",
         "Pro forma adjustments for acquisitions and dispositions depend on transaction details that public filings do not provide directly",
-        "The 3.00 threshold comes from Ashland's 10-K disclosures and is checked against Section 7.11 by the fill script; the script warns if 3.00 is not in the extracted clause",
+        "The 3.00 threshold was first taken from Ashland's 10-K disclosures and is confirmed in Section 7.11(b)",
         "Consolidated Interest Charges nets out interest income and non-cash items, so it differs from reported interest expense",
         "Consolidated EBITDA adds back Consolidated Interest Charges not calculated on a pro forma basis, while the ratio's denominator is pro forma unless otherwise specified"
       ],

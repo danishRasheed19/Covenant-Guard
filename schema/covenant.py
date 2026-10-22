@@ -57,6 +57,7 @@ class TestFrequency(str, Enum):
 
 class MeasurementBasis(str, Enum):
     TRAILING_FOUR_QUARTERS = "trailing_four_quarters"  # typical for leverage / coverage
+    TRAILING_TWELVE_MONTHS = "trailing_twelve_months"  # monthly-tested ratios over the last 12 months
     POINT_IN_TIME = "point_in_time"                    # typical for liquidity
     OTHER = "other"
 

@@ -3,13 +3,16 @@
 What it does
 ------------
 * One line per paragraph; table rows become one line with cells joined by " | ".
+  Exception: a two-cell row whose first cell is only an enumerator ("3.1", "(a)", "(iv)") is a
+  hanging indent built with a table, so it becomes "3.1 text" like an ordinary paragraph.
 * Drops struck-through text (<s>, <strike>, <del>, or CSS line-through), so a "conformed copy"
   of an amended agreement reads as the current text instead of merging deleted and inserted words.
 * Ignores scripts, styles, <head>, and anything hidden with display:none (inline XBRL headers).
-* Removes lines that are only a page number, and the stray space after an opening curly quote.
+* Removes lines that are only a page number (arabic or lowercase roman, e.g. "-iv-"), lone "Page"
+  column headers from the table of contents, and the stray space after an opening curly quote.
 
-Limits: a table row containing only a bare number is treated as a page number and dropped.
-Not yet tested against real SEC files; run it on your four agreements and read the output.
+Limits: a table row containing only a bare number or a lowercase roman numeral is treated as a
+page number and dropped. Verified on three real credit agreements plus synthetic tests.
 """
 
 import re
@@ -26,7 +29,16 @@ STRIKE_TAGS = {"s", "strike", "del"}
 CELLS = {"td", "th"}
 
 _WHITESPACE = re.compile(r"[ \t\r\n\f\v\u00a0\u2009\u200a\u200b]+")
-_PAGE_NUMBER = re.compile(r"^\s*[-\u2013]?\s*\d{1,3}\s*[-\u2013]?\s*$")
+# A line that is only a page marker: "12", "- 12 -", or a lowercase roman numeral like "-iv-"
+# (front-matter pages such as the table of contents). Lowercase only, so a heading "I" survives.
+_PAGE_NUMBER = re.compile(r"^\s*[-\u2013]?\s*(?:\d{1,3}|[ivxl]{1,7})\s*[-\u2013]?\s*$")
+# A cell that holds only a paragraph enumerator: "3.1", "Section 3.1", "1.", "(a)", "(iv)", "(A)", "(1)".
+# Word-generated legal HTML often builds hanging indents as a two-cell table row: number | text.
+_ENUMERATOR_CELL = re.compile(
+    r"^(?:(?:Section\s+)?\d{1,2}\.\d{1,2}\.?|\d{1,2}\.|\((?:[a-z]{1,2}|[ivxlcdm]{1,6}|[A-Z]{1,2}|\d{1,3})\))$"
+)
+# The "Page" column header that table-of-contents tables repeat at the top of every page.
+_PAGE_HEADER = re.compile(r"^\s*page\s*$", re.IGNORECASE)
 
 
 def _collapse(text: str) -> str:
@@ -79,7 +91,12 @@ class _Extractor(HTMLParser):
         if self.in_cell:
             self._end_cell()
         if self.row_cells:
-            self.paragraphs.append(" | ".join(self.row_cells))
+            cells = self.row_cells
+            if len(cells) == 2 and _ENUMERATOR_CELL.match(cells[0]):
+                # Hanging-indent layout, not a data table: "(a) | text" reads as "(a) text".
+                self.paragraphs.append(f"{cells[0]} {cells[1]}")
+            else:
+                self.paragraphs.append(" | ".join(cells))
         self.row_cells = None
 
     # ---- HTMLParser hooks ------------------------------------------------- #
@@ -143,7 +160,7 @@ def html_to_text(html: str, drop_struck: bool = True) -> ParsedDocument:
     extractor._end_row()
     extractor._flush_paragraph()
 
-    lines = [line for line in extractor.paragraphs if not _PAGE_NUMBER.match(line)]
+    lines = [line for line in extractor.paragraphs if not (_PAGE_NUMBER.match(line) or _PAGE_HEADER.match(line))]
     text = "\n".join(lines)
     text = re.sub("([\u201c\u2018])[ \t]+", r"\1", text)
     text = re.sub("[ \t]+([\u201d])", r"\1", text)

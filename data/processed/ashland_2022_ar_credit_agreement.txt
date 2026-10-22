@@ -29,7 +29,6 @@ DEUTSCHE BANK SECURITIES INC., PNC BANK, NATIONAL ASSOCIATION, FIFTH THIRD BANK,
 and THE TORONTO-DOMINION BANK, NEW YORK BRANCH,
 as Senior Co-Arrangers and Senior Co-Managers
 TABLE OF CONTENTS
-Page
 ARTICLE I DEFINITIONS AND ACCOUNTING TERMS
 1.01 | DEFINED TERMS | 1
 1.02 | OTHER INTERPRETIVE PROVISIONS | 40
@@ -68,8 +67,6 @@ ARTICLE III TAXES, YIELD PROTECTION AND ILLEGALITY
 3.06 | COMPENSATION FOR LOSSES | 77
 3.07 | MITIGATION OBLIGATIONS; REPLACEMENT OF LENDERS | 78
 3.08 | SURVIVAL | 78
--i-
-Page
 3.09 | BENCHMARK REPLACEMENT SETTING | 78
 ARTICLE IV CONDITIONS PRECEDENT TO THE RESTATEMENT EFFECTIVE DATE
 4.01 | CONDITIONS TO RESTATEMENT EFFECTIVE DATE | 80
@@ -111,8 +108,6 @@ ARTICLE VI AFFIRMATIVE COVENANTS
 6.09 | BOOKS AND RECORDS | 94
 6.10 | INSPECTION RIGHTS | 94
 6.11 | USE OF PROCEEDS | 94
--ii-
-Page
 6.12 | COMPLIANCE WITH ENVIRONMENTAL LAWS | 94
 6.13 | PREPARATION OF ENVIRONMENTAL REPORTS | 95
 6.14 | DESIGNATION AS SENIOR DEBT | 96
@@ -152,8 +147,6 @@ ARTICLE IX ADMINISTRATIVE AGENT
 9.09 | ADMINISTRATIVE AGENT MAY FILE PROOFS OF CLAIM | 115
 9.10 | GUARANTY | 115
 9.11 | WITHHOLDING | 116
--iii-
-Page
 9.12 | CERTAIN ERISA MATTERS | 116
 9.13 | GUARANTEED CASH MANAGEMENT AGREEMENTS, GUARANTEED FOREIGN LINE OF CREDIT AGREEMENTS, GUARANTEED LETTER OF CREDIT AGREEMENTS AND GUARANTEED HEDGE AGREEMENTS | 117
 9.14 | ERRONEOUS PAYMENTS | 118
@@ -181,22 +174,21 @@ ARTICLE X MISCELLANEOUS
 10.21 | ACKNOWLEDGEMENT REGARDING ANY SUPPORTED QFCS | 136
 10.22 | NETHERLANDS AUTHORITY | 137
 10.23 | AMENDMENT AND RESTATEMENT | 138
--iv-
 SCHEDULES
-1.01 | Unrestricted Subsidiaries
-1.02 | Immaterial Domestic Subsidiaries
-2.01 | Commitments and Applicable Percentages
+1.01 Unrestricted Subsidiaries
+1.02 Immaterial Domestic Subsidiaries
+2.01 Commitments and Applicable Percentages
 2.03(a) | Existing Letters of Credit
-5.06 | Litigation
-5.09 | Environmental Matters
-5.11 | Tax Sharing Agreements
-5.12 | ERISA Compliance
-5.20 | Labor Matters
-7.01 | Existing Liens
-7.02 | Existing Indebtedness
-7.03 | Existing Investments
-7.09 | Restrictions on Distributions by Subsidiaries
-10.02 | Administrative Agent’s Office, Account, Certain Addresses for Notices
+5.06 Litigation
+5.09 Environmental Matters
+5.11 Tax Sharing Agreements
+5.12 ERISA Compliance
+5.20 Labor Matters
+7.01 Existing Liens
+7.02 Existing Indebtedness
+7.03 Existing Investments
+7.09 Restrictions on Distributions by Subsidiaries
+10.02 Administrative Agent’s Office, Account, Certain Addresses for Notices
 EXHIBITS
 Form of
 A-1 | Committed Loan Notice
@@ -215,7 +207,6 @@ F | Report of Letter of Credit Information
 G-1 – G-4 | Non-Bank Certificates
 H | Guaranty
 I | Assumption Agreement
--v-
 AMENDED AND RESTATED CREDIT AGREEMENT
 This AMENDED AND RESTATED CREDIT AGREEMENT (this “Agreement”) is entered into as of July 22, 2022, among ASHLAND GLOBAL HOLDINGS INC. a Delaware corporation (“Ashland Global”), ASHLAND CHEMCO INC., a Delaware corporation (“Ashland Chemco”), ASHLAND LLC, a Kentucky limited liability company (“Ashland”), ASHLAND SERVICES B.V., a besloten vennootschap met beperkte aansprakelijkheid organized under the laws of the Netherlands, having its official seat (statutaire zetel) in Rotterdam and registered with the Dutch trade register under number 24267865 (the “Dutch Borrower”), each lender from time to time party hereto (collectively, the “Lenders” and individually, a “Lender”), THE BANK OF NOVA SCOTIA, HOUSTON BRANCH as Administrative Agent, Swing Line Lender and an L/C Issuer, each other L/C Issuer from time to time party hereto and CITIBANK, N.A., as Syndication Agent.
 PRELIMINARY STATEMENTS:
@@ -1433,8 +1424,8 @@ The undersigned, [Name of Borrower], hereby requests (select one):
 ■ | A Borrowing of Revolving Credit Loans.
 ■ | A conversion of Revolving Credit Loans from one Type to another.
 ■ | A continuation of Eurocurrency Rate Loans or Term SOFR Loans.
-1. | On ______________________ (a Business Day).
-2. | In the currency and principal amount of [$][€]_______________________.2
+1. On ______________________ (a Business Day).
+2. In the currency and principal amount of [$][€]_______________________.2
 1 | The Administrative Agent must be notified by telephone and confirmed promptly in writing in substantially in the form of this Exhibit A-1, which must be received by the Administrative Agent not later than: (i) 1:00 p.m. three Business Days prior to the requested date of any Borrowing of, conversion to or continuation of Term SOFR Loans denominated in Dollars or of any conversion of Term SOFR Loans denominated in Dollars to Base Rate Loans, (ii) 1:00 p.m. four Business Days prior to the requested date of any Borrowing of or continuation of Eurocurrency Rate Loans denominated in Euros and (iii) 1:00 p.m. on the requested date of any Borrowing of Base Rate Loans.
 2 | With respect to a Borrowing of Revolving Credit Loans, indicate if currency is to be Dollars or Euros. If no currency is indicated, Borrowing should be in Dollars.
 Form of Committed Loan Notice
@@ -1585,7 +1576,7 @@ C-5
 6. | without duplication, all Guarantees with respect to outstanding Indebtedness of the types specified in Lines I.A.1 through I.A.5 above of Persons other than Ashland or any Subsidiary: | $______
 7. | Consolidated Indebtedness at the Statement Date (Lines I.A.1 + I.A.2 + I.A.3 + I.A.4 + I.A.5 + I.A.6)10: | $______
 B. | Consolidated EBITDA for the Measurement Period ending on the Statement Date (“Subject Period”)11:
-1. | Consolidated Net Income for the Subject Period:
+1. Consolidated Net Income for the Subject Period:
 a. the net income (loss) of Ashland and its Subsidiaries on a consolidated basis: | $______
 b. the net income of any Subsidiary during such Subject Period to the extent that the declaration or payment of dividends or similar distributions by such Subsidiary of such income is not permitted by operation of the terms of its Organization Documents or any agreement, instrument or Law applicable to such Subsidiary (unless such restrictions on dividends or similar distributions have been legally and effectively waived), other than to the extent of Ashland’s equity in any net loss of any such Subsidiary: | $______
 c. any after-tax income (after-tax loss) for such Subject Period of any Person if such Person is not a Subsidiary: | $______
@@ -1602,7 +1593,7 @@ i. the amount of any cash payments made during such Subject Period relating to p
 j. fees, expenses and non-recurring charges related to the Transactions: k. any environmental reserve adjustments related to the Environmental Trust: | $______ $______
 Form of Compliance Certificate
 C-7
-1. | Consolidated Net Income for the Subject Period Lines (I.B.1.a – I.B.1.b – I.B.1.c + I.B.1.d – I.B.1.e – I.B.1.f – I.B.1.g – I.B.1.h – I.B.1.i + I.B.1.j + I.B.1.k):12
+1. Consolidated Net Income for the Subject Period Lines (I.B.1.a – I.B.1.b – I.B.1.c + I.B.1.d – I.B.1.e – I.B.1.f – I.B.1.g – I.B.1.h – I.B.1.i + I.B.1.j + I.B.1.k):12
 To the extent not included in Consolidated Net Income for the Subject Period:
 2. | proceeds of business interruption insurance received during the Subject Period: | $______
 To the extent deducted in calculating Consolidated Net Income for the Subject Period, but without duplication and in each case for the Subject Period:
