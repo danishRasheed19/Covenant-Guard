@@ -34,3 +34,20 @@ Short entries: what we chose, why, and what we gave up. Add a new entry whenever
 ## 2026-10-12: Deployment
 - **Chose:** run locally; README, screenshots, and a demo video instead of a cloud deploy.
 - **Revisit if:** there's a budget or a free tier that's worth the setup time.
+
+## 2026-10-19: Phase 1 split into 1a / 1b / 1c
+- **Chose:** build download -> parse -> chunk first, with no database and no LLM; add Postgres + pgvector after the text is clean.
+- **Why:** parsing problems are the likeliest failure on real agreements, and they are easier to fix without a database in the loop.
+
+## 2026-10-19: Standard-library-only ingestion
+- **Chose:** `urllib` and `html.parser` instead of requests/BeautifulSoup.
+- **Why:** fewer dependencies on an old laptop and code that runs anywhere. Revisit if the parser struggles with messy HTML.
+
+## 2026-10-19: Drop struck-through text; one source document per agreement
+- **Chose:** the parser removes struck-through text, so a conformed copy of an amended agreement reads as the current text. For Regis we label the conformed copy attached to Amendment No. 1 instead of labeling the base agreement plus an amendment.
+- **Why:** avoids stitching an amendment onto its base by hand, and avoids merged deleted-and-inserted words.
+
+## 2026-10-19: Extraction-only companies are allowed
+- **Chose:** a company whose filings stop (Via) or that publishes no actual ratios can still be labeled for the extraction test, and is marked `extraction-only` in the tracker.
+- **Why:** ground truth is only needed to test the calculation. Keep most of the final 8-10 companies with ground truth.
+

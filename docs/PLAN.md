@@ -17,18 +17,25 @@ Assumes ~10 hrs/week for 8-10 weeks. Every phase ends in something demoable.
 ## Stack
 Python, FastAPI, LangGraph, Postgres + pgvector (hybrid: full-text + vector), small local embedding model, Streamlit, Langfuse (optional), Docker (optional). $0 budget: free-tier LLM API + on-disk caching. See `docs/decisions.md`.
 
-## Phase 0: Setup (Week 1)
-- [ ] Repo, environment, decision log (`docs/decisions.md`)
-- [ ] Fill `data/company_tracker.csv` (see `docs/company_selection.md`)
-- [ ] Set `SEC_USER_AGENT` env var (name + email, required by SEC)
+## Phase 0: Setup (Week 1) - done
+- [x] Repo, environment, decision log (`docs/decisions.md`)
+- [x] Tests pass; stack and scope decided
+- [x] Company tracker started (`data/company_tracker.csv`); keeps growing in parallel with Phase 1
+- [ ] Set `SEC_USER_AGENT` in `.env` (name + email, required by SEC) before the first download
 
 ## Phase 1: Data pipeline + ground truth (Weeks 1-2)
-- [ ] EDGAR client (respect rate limits)
-- [ ] HTML exhibit -> clean text, preserving section numbers and headings
-- [ ] Structure-aware chunking: split by Article/Section, keep section path as metadata
+### 1a. Download, parse, chunk (no database, no LLM)
+- [x] EDGAR client with caching and rate limiting (`ingestion/edgar_client.py`)
+- [x] HTML exhibit -> clean text; drops struck-through redline text (`ingestion/parser.py`)
+- [x] Structure-aware chunking: one chunk per defined term, one per section (`ingestion/chunker.py`)
+- [ ] Run on all four agreements and read the output; fix whatever the real files break
+### 1b. Storage and retrieval
 - [ ] Set up Postgres + pgvector (see `docker-compose.yml` or a native install)
-- [ ] Index Article I (definitions) separately from the covenant sections
-- [ ] **Hand-label covenants** into `eval/labeled/*.json` using `schema.Agreement` (2-3 agreements/week, start now)
+- [ ] Embed chunks with a small local model; load into Postgres with section metadata
+- [ ] Hybrid retrieval: Postgres full-text + pgvector, filtered by section; definitions indexed separately
+### 1c. Ground truth
+- [ ] Hand-label covenants into `eval/labeled/*.json` (Nuvera, Via, Ashland, Regis in progress); check with `scripts/validate_labels.py` and `python -m ingestion.run_ingest --label ...`
+- [ ] Grow to 8-10 agreements: need more interest coverage (target 3) and liquidity (target 2)
 
 ## Phase 2: Extraction (Weeks 2-4)
 - [ ] Retrieve financial-covenant section (hybrid search + section metadata)
