@@ -74,12 +74,15 @@ TAG_GROUPS = {
     ],
     "ebitda_parts": [
         "OperatingIncomeLoss",
+        "Depreciation",
         "DepreciationDepletionAndAmortization",
         "DepreciationAndAmortization",
         "DepreciationAmortizationAndAccretionNet",
         "AmortizationOfIntangibleAssets",
         "ShareBasedCompensation",
         "AssetImpairmentCharges",
+        "ImpairmentOfLongLivedAssetsHeldForUse",
+        "ImpairmentOfIntangibleAssetsExcludingGoodwill",
         "GoodwillImpairmentLoss",
         "GoodwillAndIntangibleAssetImpairment",
         "RestructuringCharges",
@@ -96,6 +99,10 @@ TAG_GROUPS = {
         "InterestAndDebtExpense",
         "InvestmentIncomeInterest",
         "InterestPaidNet",
+    ],
+    "capex": [  # covenants that deduct capital expenditures (e.g. MEC interest coverage)
+        "PaymentsToAcquirePropertyPlantAndEquipment",
+        "PaymentsToAcquireProductiveAssets",
     ],
     "liquidity": [
         "LineOfCreditFacilityRemainingBorrowingCapacity",

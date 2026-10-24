@@ -1,0 +1,251 @@
+{
+  "company_name": "Mayville Engineering Company, Inc.",
+  "ticker": "MEC",
+  "cik": "0001766368",
+  "agreement_title": "Third Amendment to Amended and Restated Credit Agreement (with conformed copy)",
+  "agreement_date": "2026-02-25",
+  "is_amendment": true,
+  "filing_accession": "0001104659-26-020541",
+  "filing_date": "2026-02-25",
+  "exhibit_url": "https://www.sec.gov/Archives/edgar/data/1766368/000110465926020541/tmb-20260225xex10d2.htm",
+  "covenants": [
+    {
+      "covenant_id": "mec-2026-lev-001",
+      "covenant_type": "max_total_leverage",
+      "operator": "<=",
+      "unit": "ratio",
+      "threshold_schedule": [
+        {
+          "value": 4.0
+        },
+        {
+          "effective_from": "2026-01-01",
+          "value": 5.25
+        },
+        {
+          "effective_from": "2026-07-01",
+          "value": 5.0
+        },
+        {
+          "effective_from": "2026-10-01",
+          "value": 4.0
+        },
+        {
+          "effective_from": "2027-01-01",
+          "value": 3.5
+        }
+      ],
+      "numerator_term": "Consolidated Total Indebtedness minus Unrestricted Cash and Cash Equivalents (capped at $25,000,000, or $10,000,000 during the Covenant Adjustment Period)",
+      "denominator_term": "Consolidated EBITDA",
+      "test_frequency": "quarterly",
+      "measurement_basis": "trailing_four_quarters",
+      "definitions": [
+        {
+          "term": "Consolidated Total Leverage Ratio",
+          "definition": "means, as of any date of determination, the ratio of (a) (i) Consolidated Total Indebtedness on such date minus (ii) all Unrestricted Cash and Cash Equivalents on such date in an amount not to exceed $25,000,000; provided that during the Covenant Adjustment Period, such amount shall not exceed $10,000,000 to (b) Consolidated EBITDA for the period of four (4) consecutive fiscal quarters ending on or immediately prior to such date.",
+          "section": "Section 1.1",
+          "has_custom_adjustments": true,
+          "adjustment_notes": [
+            "Subtracts Unrestricted Cash and Cash Equivalents, capped at $25,000,000 ($10,000,000 during the Covenant Adjustment Period), so this is a capped net ratio",
+            "Uses Consolidated EBITDA for the four consecutive fiscal quarters ending on or immediately before the date"
+          ]
+        },
+        {
+          "term": "Consolidated EBITDA",
+          "definition": "means, for any period, the sum of the following determined on a Consolidated basis, without duplication, for the Borrower and its Subsidiaries in accordance with GAAP: (a) Consolidated Net Income for such period plus (b) the sum of the following, without duplication, to the extent deducted in determining Consolidated Net Income for such period: (i) Consolidated Interest Expense for such period, (ii) income tax expense for such period, net of tax refunds, (iii) all amounts attributable to depreciation and amortization expense for such period, (iv) any non-cash expense component incorporated in ESOP, profit sharing, bonuses, and deferred compensation, and other stock-based compensation expense recognized for such period, (v) restructuring costs associated with exiting a production or warehouse facility, or reduction in workforce, to include severance costs, inventory cleanup, asset dispositions, relocating equipment, lease termination costs and other wrap up costs, (vi) non-cash losses, charges, costs and expenses (net of any related recoveries), (vii) losses, charges, costs and expenses incurred in connection with discontinued operations (but if such operations are classified as discontinued due to the fact that they are subject to an agreement to dispose of such operations, such losses shall be added back in the calculation of Consolidated EBITDA only when and to the extent such operations are actually disposed of), (viii) casualty and condemnation events, and dispositions consummated outside the ordinary course of business, (ix) plus/minus (ix) non-cash expenses/income incurred on fair value step-ups relating to Acquisitions, (x) plus/minus (x) non-cash expenses/income from contingent consideration fair value adjustments related to any earn-outs paid in connection with Acquisitions, plus (xi) transaction costs not to exceed $7,000,000 per Acquisition, plus (xii) Borrower’s CFO transition costs that occurred in the quarter ending June 30, 2025 of $1,166,582, plus (xiii) legal fees related to the ongoing litigation with Peloton Interactive, Inc; provided that, in no event shall the amount of cash items added back to Consolidated EBITDA under clauses (v), (vii), (viii), (xi), (xii) and (xiii) for any period exceed fifteen percent (15%) of aggregate Consolidated EBITDA for such period (calculated before giving effect to any such add back), (xiv) start-up and/or launch costs or expenses related to cross-sell revenue from the Borrower’s data center and critical power business segments; provided that in no event shall the aggregate amount added back to Consolidated EBITDA under this clause (xiv) for the term of this Agreement exceed $10,000,000 and (xv) plus/minus the reversal of any one-time non-operating losses/gains, as applicable.  For the purpose of calculating Consolidated EBITDA for any period, if during such period the Borrower or any Subsidiary shall have consummated an Acquisition, Consolidated EBITDA for such period shall be calculated after giving pro forma effect thereto as if such Acquisition occurred on the first day of such period; provided further if the Accu-Fab Acquisition closes, the parties agree that the Consolidated EBITDA of Accu-Fab, LLC and its Subsidiaries shall equal $3,242,517 for the quarter ending December 31, 2024, $3,691,078 for the quarter ending March 31, 2025 and $5,011,409 for the quarter ending June 30, 2025.",
+          "section": "Section 1.1",
+          "has_custom_adjustments": true,
+          "adjustment_notes": [
+            "Starts from Consolidated Net Income and adds back interest, income tax (net of refunds), depreciation and amortization, non-cash ESOP, bonus, deferred compensation and stock-based expense",
+            "Adds back restructuring costs from exiting a production or warehouse facility or reducing headcount, non-cash losses and charges, discontinued-operations losses, casualty, condemnation and out-of-ordinary-course disposition items",
+            "Adds or subtracts non-cash fair value step-up items and contingent consideration (earn-out) fair value adjustments from Acquisitions, and the reversal of one-time non-operating gains and losses",
+            "Adds acquisition transaction costs capped at $7,000,000 per Acquisition, CFO transition costs of $1,166,582 and legal fees for the Peloton Interactive litigation",
+            "Cash add-backs under clauses (v), (vii), (viii), (xi), (xii) and (xiii) are together capped at 15% of Consolidated EBITDA before those add-backs",
+            "Start-up and launch costs for the data center and critical power segments are capped at $10,000,000 over the term of the agreement",
+            "Acquisitions are included pro forma; Accu-Fab quarterly EBITDA is fixed by agreement at $3,242,517 (Q4 2024), $3,691,078 (Q1 2025) and $5,011,409 (Q2 2025)"
+          ]
+        },
+        {
+          "term": "Consolidated Total Indebtedness",
+          "definition": "means, as of any date of determination with respect to the Borrower and its Subsidiaries on a Consolidated basis without duplication, in accordance with GAAP the sum of all Indebtedness of the Borrower and its Subsidiaries (excluding net obligations under any Hedge Agreements).",
+          "section": "Section 1.1",
+          "has_custom_adjustments": true,
+          "adjustment_notes": [
+            "Sum of all Indebtedness of the Borrower and its Subsidiaries on a Consolidated basis, excluding net obligations under Hedge Agreements"
+          ]
+        },
+        {
+          "term": "Indebtedness",
+          "definition": "means, with respect to any Person at any date and without duplication, the sum of the following: (a)all liabilities, obligations and indebtedness for borrowed money including, but not limited to, obligations evidenced by bonds, debentures, notes or other similar instruments of any such Person; (b)all obligations to pay the deferred purchase price of property or services (excluding pension and other obligations owed for the services of officers, directors and employees of the Borrower and its Subsidiaries in the ordinary course of business) of any such Person (including, without limitation, all payment obligations under non-competition, earn-out or similar agreements), except trade payables arising in the ordinary course of business not more than ninety (90) days past due, or that are currently being contested in good faith by appropriate proceedings and with respect to which reserves in conformity with GAAP have been provided for on the books of such Person; (c)the Attributable Indebtedness of such Person with respect to such Person’s Capital Lease Obligations and Synthetic Leases (regardless of whether accounted for as indebtedness under GAAP); (d)all obligations of such Person under conditional sale or other title retention agreements relating to property purchased by such Person to the extent of the value of such property (other than customary reservations or retentions of title under agreements with suppliers entered into in the ordinary course of business); (e)all Indebtedness of any other Person secured by a Lien on any asset owned or being purchased by such Person (including indebtedness arising under conditional sales or other title retention agreements except trade",
+          "section": "Section 1.1",
+          "has_custom_adjustments": true,
+          "adjustment_notes": [
+            "Defines what Consolidated Total Indebtedness counts; may include items such as letters of credit or earn-outs that have no single balance sheet tag"
+          ]
+        },
+        {
+          "term": "Unrestricted Cash and Cash Equivalents",
+          "definition": "means, as of any date of determination, 100% of all cash and Cash Equivalents of the Borrower and its Domestic Subsidiaries that are held in bank accounts or securities accounts located in the United States, in each case that are unrestricted and not subject to any Liens (other than Liens permitted under Section 9.2(a) and (k)); provided that the proceeds of any Indebtedness incurred substantially concurrently with the determination of such amount shall be excluded.",
+          "section": "Section 1.1",
+          "has_custom_adjustments": true,
+          "adjustment_notes": [
+            "Only cash that meets the agreement's unrestricted test is netted; restricted cash is excluded (confirm once the definition is pasted)"
+          ]
+        },
+        {
+          "term": "Consolidated Net Income",
+          "definition": "means, for any period, the net income (or loss) of the Borrower and its Subsidiaries for such period, determined on a Consolidated basis, without duplication, in accordance with GAAP; provided, that in calculating Consolidated Net Income for any period, there shall be excluded (a) the net income (or loss) of any Person accrued prior to the date it becomes a Subsidiary of the Borrower or any of its Subsidiaries or is merged into or consolidated with the Borrower or any of its Subsidiaries or that Person’s assets are acquired by the Borrower or any of its Subsidiaries, and (b) any gain or loss from Asset Dispositions during such period.",
+          "section": "Section 1.1",
+          "has_custom_adjustments": true,
+          "adjustment_notes": [
+            "Excludes income or loss of a Person before it becomes a Subsidiary or is merged in, and gains or losses from Asset Dispositions"
+          ]
+        },
+        {
+          "term": "Covenant Adjustment Period",
+          "definition": "shall mean the period commencing with the Third Amendment Effective Date and ending on the earlier of (a) the date that the Borrower provides the financial statements referred to in Section 8.1(b) for the fiscal quarter ended March 31, 2027, demonstrating compliance with the financial covenants set forth in Section 9.15 for such quarter and an Officer’s Compliance Certificate evidencing the same and (b) at the sole option of the Borrower, on the date that the Borrower provides the financial statements referred to in Section 8.1(a) or (b), as applicable, demonstrating compliance with the financial covenants set forth in Section 9.15 as in effect immediately prior to the Third Amendment Effective Date (without giving effect to any Leverage Increase Period) for the applicable fiscal quarter and an Officer’s Compliance Certificate evidencing the same.  For the avoidance of doubt, the Covenant Adjustment Period shall continue unless or until one of the events in the foregoing clause (a) or (b) occurs.",
+          "section": "Section 1.1",
+          "has_custom_adjustments": false,
+          "adjustment_notes": [
+            "Starts on the Third Amendment Effective Date; relaxes the thresholds and lowers the cash netting cap to $10,000,000 while it continues"
+          ]
+        }
+      ],
+      "citation": {
+        "section": "Section 9.15(a)",
+        "quote": " As of the last day of any fiscal quarter ending during the periods specified below, permit the Consolidated Total Leverage Ratio to be greater than the corresponding ratio set forth below"
+      },
+      "ambiguities": [
+        "This label covers the Third Amendment dated February 25, 2026 (filed with a full conformed copy of the June 28, 2023 Amended and Restated Credit Agreement); the First Amendment (June 26, 2025) and Second Amendment (August 15, 2025) came before it",
+        "Section 9.15 in the exhibit is a redline showing struck and inserted text together; the quote and definitions must be copied from the parsed text (struck text dropped), not from a browser copy",
+        "Thresholds come from dated tables in Section 9.15; each effective_from is the day after the previous test date because tests are applied at fiscal quarter end",
+        "The Covenant Adjustment Period ends at the earlier of delivery of Q1 2027 compliance or, at the Borrower's option, any earlier compliant quarter under the pre-amendment covenants; after it ends the thresholds revert (leverage 3.50, interest coverage 3.00), which depends on an event, not a date",
+        "Consolidated EBITDA contains capped and judgment-based add-backs and fixed pro forma Accu-Fab figures that public XBRL data cannot reproduce",
+        "The actual ratios disclosed in the 10-K for December 31, 2025 were computed under the agreement before the Third Amendment; the definitions in this label come from the conformed copy and may differ",
+        "A Leverage Increase Period raises the maximum by 0.50 for four fiscal quarters after an Acquisition with Permitted Acquisition Consideration over $40,000,000 (never above 4.00, at most two periods); it cannot start during the Covenant Adjustment Period and is not resumed for the Accu-Fab Acquisition if that period ended under clause (b). This condition cannot be written as a dated threshold step",
+        "Consolidated Total Indebtedness depends on the Indebtedness definition, which is not yet captured in this label"
+      ],
+      "review_status": "needs_review"
+    },
+    {
+      "covenant_id": "mec-2026-icr-001",
+      "covenant_type": "min_interest_coverage",
+      "operator": ">=",
+      "unit": "ratio",
+      "threshold_schedule": [
+        {
+          "value": 3.0
+        },
+        {
+          "effective_from": "2026-04-01",
+          "value": 2.75
+        },
+        {
+          "effective_from": "2027-01-01",
+          "value": 3.0
+        }
+      ],
+      "numerator_term": "Consolidated EBITDA minus 50% of Capital Expenditures, minus Discretionary Repurchase Obligation Payments paid in cash (to the extent not already deducted), minus income tax expense net of tax refunds, plus Mandatory Repurchase Obligation Payments paid in cash (to the extent deducted in Consolidated EBITDA)",
+      "denominator_term": "Consolidated Interest Expense",
+      "test_frequency": "quarterly",
+      "measurement_basis": "trailing_four_quarters",
+      "definitions": [
+        {
+          "term": "Consolidated Interest Coverage Ratio",
+          "definition": "means, as of any date of determination, the ratio of (a) an amount equal to (i) Consolidated EBITDA, minus (ii) 50% of Capital Expenditures, minus (iii) Discretionary Repurchase Obligation Payments paid in cash, to the extent not already deducted in calculating Consolidated EBITDA, minus (iv) income tax expense for such period, net of tax refunds, plus (v) Mandatory Repurchase Obligation Payments paid in cash, to the extent deducted in calculating Consolidated EBITDA to (b) Consolidated Interest Expense, all as determined for the period of four (4) consecutive fiscal quarters ending on or immediately prior to such date.",
+          "section": "Section 1.1",
+          "has_custom_adjustments": true,
+          "adjustment_notes": [
+            "Numerator is not plain EBITDA: it deducts 50% of Capital Expenditures, cash Discretionary Repurchase Obligation Payments and income tax expense, and adds back cash Mandatory Repurchase Obligation Payments",
+            "Measured over the four consecutive fiscal quarters ending on or immediately before the date"
+          ]
+        },
+        {
+          "term": "Consolidated EBITDA",
+          "definition":"means, for any period, the sum of the following determined on a Consolidated basis, without duplication, for the Borrower and its Subsidiaries in accordance with GAAP: (a) Consolidated Net Income for such period plus (b) the sum of the following, without duplication, to the extent deducted in determining Consolidated Net Income for such period: (i) Consolidated Interest Expense for such period, (ii) income tax expense for such period, net of tax refunds, (iii) all amounts attributable to depreciation and amortization expense for such period, (iv) any non-cash expense component incorporated in ESOP, profit sharing, bonuses, and deferred compensation, and other stock-based compensation expense recognized for such period, (v) restructuring costs associated with exiting a production or warehouse facility, or reduction in workforce, to include severance costs, inventory cleanup, asset dispositions, relocating equipment, lease termination costs and other wrap up costs, (vi) non-cash losses, charges, costs and expenses (net of any related recoveries), (vii) losses, charges, costs and expenses incurred in connection with discontinued operations (but if such operations are classified as discontinued due to the fact that they are subject to an agreement to dispose of such operations, such losses shall be added back in the calculation of Consolidated EBITDA only when and to the extent such operations are actually disposed of), (viii) casualty and condemnation events, and dispositions consummated outside the ordinary course of business, (ix) plus/minus (ix) non-cash expenses/income incurred on fair value step-ups relating to Acquisitions, (x) plus/minus (x) non-cash expenses/income from contingent consideration fair value adjustments related to any earn-outs paid in connection with Acquisitions, plus (xi) transaction costs not to exceed $7,000,000 per Acquisition, plus (xii) Borrower’s CFO transition costs that occurred in the quarter ending June 30, 2025 of $1,166,582, plus (xiii) legal fees related to the ongoing litigation with Peloton Interactive, Inc; provided that, in no event shall the amount of cash items added back to Consolidated EBITDA under clauses (v), (vii), (viii), (xi), (xii) and (xiii) for any period exceed fifteen percent (15%) of aggregate Consolidated EBITDA for such period (calculated before giving effect to any such add back), (xiv) start-up and/or launch costs or expenses related to cross-sell revenue from the Borrower’s data center and critical power business segments; provided that in no event shall the aggregate amount added back to Consolidated EBITDA under this clause (xiv) for the term of this Agreement exceed $10,000,000 and (xv) plus/minus the reversal of any one-time non-operating losses/gains, as applicable.  For the purpose of calculating Consolidated EBITDA for any period, if during such period the Borrower or any Subsidiary shall have consummated an Acquisition, Consolidated EBITDA for such period shall be calculated after giving pro forma effect thereto as if such Acquisition occurred on the first day of such period; provided further if the Accu-Fab Acquisition closes, the parties agree that the Consolidated EBITDA of Accu-Fab, LLC and its Subsidiaries shall equal $3,242,517 for the quarter ending December 31, 2024, $3,691,078 for the quarter ending March 31, 2025 and $5,011,409 for the quarter ending June 30, 2025.",
+          "section": "Section 1.1",
+          "has_custom_adjustments": true,
+          "adjustment_notes": [
+            "Starts from Consolidated Net Income and adds back interest, income tax (net of refunds), depreciation and amortization, non-cash ESOP, bonus, deferred compensation and stock-based expense",
+            "Adds back restructuring costs from exiting a production or warehouse facility or reducing headcount, non-cash losses and charges, discontinued-operations losses, casualty, condemnation and out-of-ordinary-course disposition items",
+            "Adds or subtracts non-cash fair value step-up items and contingent consideration (earn-out) fair value adjustments from Acquisitions, and the reversal of one-time non-operating gains and losses",
+            "Adds acquisition transaction costs capped at $7,000,000 per Acquisition, CFO transition costs of $1,166,582 and legal fees for the Peloton Interactive litigation",
+            "Cash add-backs under clauses (v), (vii), (viii), (xi), (xii) and (xiii) are together capped at 15% of Consolidated EBITDA before those add-backs",
+            "Start-up and launch costs for the data center and critical power segments are capped at $10,000,000 over the term of the agreement",
+            "Acquisitions are included pro forma; Accu-Fab quarterly EBITDA is fixed by agreement at $3,242,517 (Q4 2024), $3,691,078 (Q1 2025) and $5,011,409 (Q2 2025)"
+          ]
+        },
+        {
+          "term": "Consolidated Interest Expense",
+          "definition": "means, for any period, the sum of interest expense (including, without limitation, interest expense attributable to Capital Lease Obligations and all net payment obligations pursuant to Hedge Agreements) for such period, determined on a Consolidated basis, without duplication, for the Borrower and its Subsidiaries in accordance with GAAP.",
+          "section": "Section 1.1",
+          "has_custom_adjustments": true,
+          "adjustment_notes": [
+            "Includes interest expense on Capital Lease Obligations and all net payment obligations under Hedge Agreements, so it can differ from reported interest expense"
+          ]
+        },
+        {
+          "term": "Consolidated Net Income",
+          "definition": "means, for any period, the net income (or loss) of the Borrower and its Subsidiaries for such period, determined on a Consolidated basis, without duplication, in accordance with GAAP; provided, that in calculating Consolidated Net Income for any period, there shall be excluded (a) the net income (or loss) of any Person accrued prior to the date it becomes a Subsidiary of the Borrower or any of its Subsidiaries or is merged into or consolidated with the Borrower or any of its Subsidiaries or that Person’s assets are acquired by the Borrower or any of its Subsidiaries, and (b) any gain or loss from Asset Dispositions during such period.",
+          "section": "Section 1.1",
+          "has_custom_adjustments": true,
+          "adjustment_notes": [
+            "Excludes income or loss of a Person before it becomes a Subsidiary or is merged in, and gains or losses from Asset Dispositions"
+          ]
+        },
+        {
+          "term": "Capital Expenditures",
+          "definition": "means, with respect to the Borrower and its Subsidiaries on a Consolidated basis, for any period, (a) the additions to property, plant and equipment and other capital expenditures that are (or would be) set forth in a consolidated statement of cash flows of such Person for such period prepared in accordance with GAAP and (b) Capital Lease Obligations during such period, but excluding expenditures for the restoration, repair or replacement of any fixed or capital asset which was destroyed or damaged, in whole or in part, to the extent financed by the proceeds of an insurance policy maintained by such Person.",
+          "section": "Section 1.1",
+          "has_custom_adjustments": true,
+          "adjustment_notes": [
+            "Includes additions to property, plant and equipment from the cash flow statement plus Capital Lease Obligations",
+            "Excludes spending on restoring damaged or destroyed assets to the extent paid from insurance proceeds"
+          ]
+        },
+        {
+          "term": "Discretionary Repurchase Obligation Payments",
+          "definition": "means Repurchase Obligation Payments (other than payments to satisfy current ESOP diversification requirements under the ESOP and the Code), to the extent paid commencing sooner than the latest date permitted under the Code or in lump sum on a more accelerated basis than the maximum period permitted under the Code or in installments on a more accelerated basis than the maximum period permitted under the Code (disregarding for this purpose (i) application of the five year waiting period under Section 409(o)(1)(a)(ii) of the Code, (ii) application of any installment schedules in the Code in excess of five years under Section 409(o)(1)(C)(iv) of the Code, and (iii) the fact that payments may be made during June of a particular plan year instead of being deferred to the end of such plan year).",
+          "section": "Section 1.1",
+          "has_custom_adjustments": true,
+          "adjustment_notes": [
+            "ESOP repurchase payments made sooner or on a faster schedule than the Code requires, other than current ESOP diversification payments"
+          ]
+        },
+        {
+          "term": "Mandatory Repurchase Obligation Payments",
+          "definition": "means (a) Repurchase Obligation Payments made to satisfy current ESOP diversification requirements under the ESOP and the Code, and (b) other Repurchase Obligation Payments commencing at the latest date permitted under the Code and in installments over the maximum amount of time permitted under the Code (disregarding for this purpose (i) application of the five year waiting period under Section 409(o)(1)(a)(ii) of the Code, (ii) application of any installment schedules in the Code in excess of five years under Section 409(o)(1)(C)(iv) of the Code, and (iii) the fact that payments may be made during June of a particular plan year instead of being deferred to the end of such plan year).",
+          "section": "Section 1.1",
+          "has_custom_adjustments": true,
+          "adjustment_notes": [
+            "ESOP repurchase payments for current diversification requirements, and other payments made at the latest date and over the longest period the Code permits"
+          ]
+        },
+        {
+          "term": "Repurchase Obligation Payments",
+          "definition": "means (a) cash payments made to the ESOP participants (or their beneficiaries) by the Borrower in order to satisfy the obligation of the Borrower under the ESOP and the Code to purchase Equity Interests from ESOP participants or their beneficiaries upon termination of employment, and (b) cash contributions or distributions to or repurchases from or advances to the ESOP by the Borrower to enable the ESOP to make such distributions and purchases in the current period, or to satisfy ESOP diversification requirements under the ESOP and ERISA in the current period.",
+          "section": "Section 1.1",
+          "has_custom_adjustments": true,
+          "adjustment_notes": [
+            "ESOP-related repurchase payments are not a standard XBRL line item"
+          ]
+        }
+      ],
+      "citation": {
+        "section": "Section 9.15(b)",
+        "quote": "As of the last day of any fiscal quarter ending during the periods specified below, permit the Consolidated Interest Coverage Ratio to be less than 3.00 to 1.00.corresponding ratio set forth below"
+      },
+      "ambiguities": [
+        "This label covers the Third Amendment dated February 25, 2026 (filed with a full conformed copy of the June 28, 2023 Amended and Restated Credit Agreement); the First Amendment (June 26, 2025) and Second Amendment (August 15, 2025) came before it",
+        "Section 9.15 in the exhibit is a redline showing struck and inserted text together; the quote and definitions must be copied from the parsed text (struck text dropped), not from a browser copy",
+        "Thresholds come from dated tables in Section 9.15; each effective_from is the day after the previous test date because tests are applied at fiscal quarter end",
+        "The Covenant Adjustment Period ends at the earlier of delivery of Q1 2027 compliance or, at the Borrower's option, any earlier compliant quarter under the pre-amendment covenants; after it ends the thresholds revert (leverage 3.50, interest coverage 3.00), which depends on an event, not a date",
+        "Consolidated EBITDA contains capped and judgment-based add-backs and fixed pro forma Accu-Fab figures that public XBRL data cannot reproduce",
+        "The actual ratios disclosed in the 10-K for December 31, 2025 were computed under the agreement before the Third Amendment; the definitions in this label come from the conformed copy and may differ",
+        "The ratio's numerator needs capital expenditures, tax expense, and ESOP repurchase payments; the ESOP payments have no standard XBRL tag",
+        "Consolidated Interest Expense includes net hedge payments and capital lease interest, so reported interest expense will not match exactly"
+      ],
+      "review_status": "needs_review"
+    }
+  ]
+}
