@@ -24,7 +24,7 @@ from pathlib import Path
 from ingestion.chunker import chunk_document
 from ingestion.edgar_client import REPO_ROOT, decode, fetch
 from ingestion.parser import html_to_text
-from ingestion.textnorm import normalize
+from ingestion.textnorm import contains, squash
 
 PROCESSED_DIR = REPO_ROOT / "data" / "processed"
 
@@ -36,9 +36,8 @@ def _is_placeholder(value: str) -> bool:
 def check_against_label(label: dict, text: str, chunks: list) -> list:
     """Return report lines; lines starting with MISS are problems."""
     report = []
-    document = normalize(text)
     sections = {c.section_number for c in chunks if c.kind == "section"}
-    terms = {normalize(c.term) for c in chunks if c.kind == "definition"}
+    terms = {squash(c.term) for c in chunks if c.kind == "definition"}
 
     for covenant in label.get("covenants", []):
         cid = covenant["covenant_id"]
@@ -48,17 +47,17 @@ def check_against_label(label: dict, text: str, chunks: list) -> list:
             report.append(f"{'OK  ' if found else 'MISS'} {cid}: section {match.group(1)} {'found' if found else 'not found as a section heading'}")
         quote = covenant["citation"]["quote"]
         if not _is_placeholder(quote):
-            found = normalize(quote) in document
+            found = contains(text, quote)
             report.append(f"{'OK  ' if found else 'MISS'} {cid}: citation quote {'found' if found else 'not found in parsed text'}")
         for definition in covenant.get("definitions", []):
             name = definition["term"]
             if _is_placeholder(name):
                 continue
-            found = normalize(name) in terms
+            found = squash(name) in terms
             report.append(f"{'OK  ' if found else 'MISS'} {cid}: definition chunk for '{name}' {'found' if found else 'not found'}")
             body = definition["definition"]
             if not _is_placeholder(body):
-                found = normalize(body) in document
+                found = contains(text, body)
                 report.append(f"{'OK  ' if found else 'MISS'} {cid}: pasted definition of '{name}' {'matches' if found else 'does not match the parsed text'}")
     return report
 

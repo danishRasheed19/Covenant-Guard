@@ -19,12 +19,16 @@ Anything else is captured as OTHER_FINANCIAL and stored, but not computed.
 """
 
 import json
-import re
 from datetime import date
 from enum import Enum
 from typing import Optional
 
 from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
+
+# One implementation of text matching for the whole project (see ingestion/textnorm.py).
+# `normalize_text` is kept as a public name because schema/__init__.py exports it.
+from ingestion.textnorm import contains as _text_contains
+from ingestion.textnorm import normalize as normalize_text
 
 
 # --------------------------------------------------------------------------- #
@@ -82,21 +86,6 @@ class _Strict(BaseModel):
     model_config = ConfigDict(extra="forbid", str_strip_whitespace=True)
 
 
-_TEXT_MAP = str.maketrans(
-    {
-        "\u2018": "'", "\u2019": "'",      # curly single quotes
-        "\u201c": '"', "\u201d": '"',      # curly double quotes
-        "\u2013": "-", "\u2014": "-",      # en / em dash
-        "\u00a0": " ",                      # non-breaking space
-    }
-)
-
-
-def normalize_text(text: str) -> str:
-    """Lowercase, unify quotes/dashes, collapse whitespace. Used for quote matching."""
-    return re.sub(r"\s+", " ", text.translate(_TEXT_MAP)).strip().lower()
-
-
 # --------------------------------------------------------------------------- #
 # Extraction-side models
 # --------------------------------------------------------------------------- #
@@ -108,8 +97,12 @@ class SourceCitation(_Strict):
     )
 
     def quote_in(self, source_text: str) -> bool:
-        """True if the quote appears in `source_text` (whitespace/quote-style tolerant)."""
-        return normalize_text(self.quote) in normalize_text(source_text)
+        """True if the quote appears in `source_text`.
+
+        Ignores case, quote style, and ALL whitespace (so "provided that" matches the
+        source's "providedthat"). Letters and digits must still match exactly.
+        """
+        return _text_contains(source_text, self.quote)
 
 
 class DefinedTerm(_Strict):

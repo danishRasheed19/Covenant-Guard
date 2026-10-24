@@ -9,7 +9,7 @@ Usage (from the repo root):
 With no file arguments, every .json file in eval/labeled/ is checked.
 
 --source (optional) is a plain-text copy of the agreement. If given, every citation
-quote and every definition must appear in it (tolerant of whitespace and curly quotes).
+quote and every definition must appear in it (ignores case, quote style and all whitespace).
 
 Beyond the schema, each file is checked for internal consistency:
 * the same defined term must have the same definition text and has_custom_adjustments flag
@@ -30,7 +30,8 @@ from pathlib import Path
 from pydantic import ValidationError
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
-from schema import Agreement, normalize_text  # noqa: E402
+from ingestion.textnorm import contains, squash  # noqa: E402
+from schema import Agreement  # noqa: E402
 
 
 def find_placeholders(obj, path=""):
@@ -73,17 +74,17 @@ def check_consistency(agreement):
     first_seen = {}   # normalized term -> (covenant_id, DefinedTerm)
     for covenant in agreement.covenants:
         for term in covenant.definitions:
-            key = normalize_text(term.term)
+            key = squash(term.term)
             if key not in first_seen:
                 first_seen[key] = (covenant.covenant_id, term)
                 continue
             other_id, other = first_seen[key]
             where = f"'{term.term}' in {covenant.covenant_id} vs {other_id}"
-            if normalize_text(term.definition) != normalize_text(other.definition):
+            if squash(term.definition) != squash(other.definition):
                 problems.append(f"{where}: definition text differs")
             if term.has_custom_adjustments != other.has_custom_adjustments:
                 problems.append(f"{where}: has_custom_adjustments differs")
-            if [normalize_text(n) for n in term.adjustment_notes] != [normalize_text(n) for n in other.adjustment_notes]:
+            if [squash(n) for n in term.adjustment_notes] != [squash(n) for n in other.adjustment_notes]:
                 warnings.append(f"{where}: adjustment_notes differ")
     return problems, warnings
 
@@ -112,12 +113,11 @@ def check_file(path: Path, source_text):
     problems.extend(consistency_problems)
 
     if source_text is not None:
-        normalized_source = normalize_text(source_text)
         for covenant in agreement.covenants:
             if not covenant.citation.quote_in(source_text):
                 problems.append(f"{covenant.covenant_id}: citation quote not found in source")
             for term in covenant.definitions:
-                if normalize_text(term.definition) not in normalized_source:
+                if not contains(source_text, term.definition):
                     problems.append(
                         f"{covenant.covenant_id}: definition of '{term.term}' not found in source"
                     )
