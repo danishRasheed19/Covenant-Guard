@@ -1,2 +1,4 @@
 pydantic>=2.5
 pytest>=8.0
+psycopg[binary]>=3.1
+fastembed
