@@ -49,10 +49,19 @@ ARTICLE = re.compile(r"^ARTICLE\s+([IVXLCDM]+|\d+)\b[\s.:\-–—]*(.*)$", re.IG
 # Terminator: one or more periods (typos like "Judgments.." occur), then optional whitespace,
 # since some filings drop the space after the title ("Notes.The obligation ...").
 # A title is either text starting with a capital, or "[Reserved]" (placeholder sections are common).
+# The word "Section" may be in any case ("SECTION 9.15" is common).
 SECTION = re.compile(
-    r"^(?:Section\s+)?(\d{1,2}\.\d{1,2})\.?\s+([A-Z][^.\n]{1,200}?|\[(?i:reserved)\])(?:\.+\s*(.*))?$"
+    r"^(?:(?i:section)\s+)?(\d{1,2}\.\d{1,2})\.?\s+([A-Z][^.\n]{1,200}?|\[(?i:reserved)\])(?:\.+\s*(.*))?$"
 )
-SECTION_NUMBER = re.compile(r"^(?:Section\s+)?(\d{1,2})\.(\d{1,2})\.?\s*")
+# Title glued to the number or to its period ("SECTION 9.15Financial Covenants.", "Section 9.15.Notes").
+# Only accepted after the word "Section", so a bare "3.50X" in a table is never a heading.
+SECTION_GLUED = re.compile(
+    r"^(?i:section)\s+(\d{1,2}\.\d{1,2})\.?([A-Z][^.\n]{1,200}?|\[(?i:reserved)\])(?:\.+\s*(.*))?$"
+)
+# The heading split over two lines: "SECTION 9.15" alone, then the title on the next line.
+SECTION_BARE = re.compile(r"^(?i:section)\s+(\d{1,2}\.\d{1,2})\.?$")
+SECTION_TITLE_LINE = re.compile(r"^([A-Z][^.\n]{1,200}?|\[(?i:reserved)\])(?:\.+\s*(.*))?$")
+SECTION_NUMBER = re.compile(r"^(?:(?i:section)\s+)?(\d{1,2})\.(\d{1,2})\.?\s*")
 # A TOC row for a section: "5.11 | Margin Stock | 76" or "5.11 Margin Stock ......... 76".
 TOC_SECTION_ENTRY = re.compile(
     r"^(?:Section\s+)?(\d{1,2})\.(\d{1,2})\.?\s*(?:\|\s*)?(.+?)\s*(?:\|\s*|\.{2,}\s*|\s)\d{1,3}\s*$",
@@ -89,6 +98,11 @@ class Chunk:
 
     def to_dict(self) -> dict:
         return asdict(self)
+
+
+def section_heading(line: str):
+    """Match object (groups: number, title, rest of line) if `line` is a one-line section heading."""
+    return SECTION.match(line) or SECTION_GLUED.match(line)
 
 
 def is_toc_row(line: str) -> bool:
@@ -200,7 +214,7 @@ def chunk_document(text: str, doc_id: str, max_chars: int = MAX_CHARS) -> list:
         state["block"] = _Block(kind, state["article"], number, title, term)
 
     def is_title_line(line: str) -> bool:
-        return (line.isupper() and len(line) < 120 and not SECTION.match(line)
+        return (line.isupper() and len(line) < 120 and not section_heading(line) and not SECTION_BARE.match(line)
                 and not ATTACHMENT.match(line) and not ARTICLE.match(line) and not is_toc_row(line))
 
     def heading_title(i: int, max_lines: int = 3) -> tuple:
@@ -237,7 +251,7 @@ def chunk_document(text: str, doc_id: str, max_chars: int = MAX_CHARS) -> list:
                     number = f"{number_match.group(1)}.{number_match.group(2)}"
                     rest = line[title_match.end():].lstrip(" .:;-\u2013\u2014")
                     return number, title_match.group(0), rest
-        match = SECTION.match(line)
+        match = section_heading(line)
         if match:
             return match.group(1), match.group(2).strip(), match.group(3)
         return None
@@ -247,7 +261,7 @@ def chunk_document(text: str, doc_id: str, max_chars: int = MAX_CHARS) -> list:
         A real body article always contains its own numbered sections; a schedule or exhibit title that
         happens to use the article heading style does not."""
         for following in lines[i:i + window]:
-            match = SECTION.match(following)
+            match = section_heading(following)
             if match:
                 return int(match.group(1).split(".")[0]) == number
             if ATTACHMENT.match(following) or ARTICLE.match(following):
@@ -326,6 +340,12 @@ def chunk_document(text: str, doc_id: str, max_chars: int = MAX_CHARS) -> list:
             continue
 
         section_match = match_section(line)
+        bare_match = SECTION_BARE.match(line) if not section_match else None
+        if bare_match and i < len(lines):
+            title_match = SECTION_TITLE_LINE.match(lines[i])
+            if title_match and not ARTICLE.match(lines[i]) and not ATTACHMENT.match(lines[i]):
+                section_match = (bare_match.group(1), title_match.group(1).strip(), title_match.group(2))
+                i += 1
         if section_match:
             number, title, rest = section_match
             state.update(number=number, title=title, body_started=True,

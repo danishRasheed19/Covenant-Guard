@@ -32,10 +32,10 @@ _WHITESPACE = re.compile(r"[ \t\r\n\f\v\u00a0\u2009\u200a\u200b]+")
 # A line that is only a page marker: "12", "- 12 -", or a lowercase roman numeral like "-iv-"
 # (front-matter pages such as the table of contents). Lowercase only, so a heading "I" survives.
 _PAGE_NUMBER = re.compile(r"^\s*[-\u2013]?\s*(?:\d{1,3}|[ivxl]{1,7})\s*[-\u2013]?\s*$")
-# A cell that holds only a paragraph enumerator: "3.1", "Section 3.1", "1.", "(a)", "(iv)", "(A)", "(1)".
+# A cell that holds only a paragraph enumerator: "3.1", "Section 3.1" (any case), "1.", "(a)", "(iv)", "(A)", "(1)".
 # Word-generated legal HTML often builds hanging indents as a two-cell table row: number | text.
 _ENUMERATOR_CELL = re.compile(
-    r"^(?:(?:Section\s+)?\d{1,2}\.\d{1,2}\.?|\d{1,2}\.|\((?:[a-z]{1,2}|[ivxlcdm]{1,6}|[A-Z]{1,2}|\d{1,3})\))$"
+    r"^(?:(?:(?i:section)\s+)?\d{1,2}\.\d{1,2}\.?|\d{1,2}\.|\((?:[a-z]{1,2}|[ivxlcdm]{1,6}|[A-Z]{1,2}|\d{1,3})\))$"
 )
 # The "Page" column header that table-of-contents tables repeat at the top of every page.
 _PAGE_HEADER = re.compile(r"^\s*page\s*$", re.IGNORECASE)
