@@ -1,0 +1,26 @@
+{
+ "provider": "gemini",
+ "model": "gemini-3.5-flash",
+ "data": {
+  "ratio_name": "Total Leverage Ratio",
+  "operator": "less_than_or_equal_to",
+  "threshold": 3.5,
+  "quote": "The Borrower shall not permit the Total Leverage Ratio as of the last day of any fiscal quarter to exceed 3.50 to 1.00."
+ },
+ "text": "{\"ratio_name\":\"Total Leverage Ratio\",\"operator\":\"less_than_or_equal_to\",\"threshold\":3.5,\"quote\":\"The Borrower shall not permit the Total Leverage Ratio as of the last day of any fiscal quarter to exceed 3.50 to 1.00.\"}",
+ "usage": {
+  "promptTokenCount": 68,
+  "candidatesTokenCount": 62,
+  "totalTokenCount": 876,
+  "promptTokensDetails": [
+   {
+    "modality": "TEXT",
+    "tokenCount": 68
+   }
+  ],
+  "thoughtsTokenCount": 746,
+  "serviceTier": "standard"
+ },
+ "prompt_chars": 220,
+ "saved_at": "2026-10-25T21:12:18"
+}
