@@ -23,6 +23,9 @@ env/
 # --- Local data and caches (regenerable) ---
 # downloaded EDGAR filings and XBRL JSON
 data/raw/
+data/processed/
+data/llm_cache/
+data/extracted/
 # on-disk LLM response cache
 cache/
 logs/
