@@ -61,3 +61,33 @@ def test_build_children_prefixes_path():
 
 def test_vector_literal():
     assert vector_literal([0.5, -1.0]) == "[0.500000,-1.000000]"
+
+
+# ---- heading match ----
+from retrieval.search import heading_score, heading_tokens
+
+
+def test_heading_tokens_drop_filler_and_plurals():
+    assert heading_tokens("Financial Covenants") == {"financial", "covenant"}
+    assert heading_tokens("Interest on the Loans") == {"interest", "loan"}
+    assert heading_tokens("Reserved Class") == {"reserved", "class"}      # 'ss' words keep their s
+
+
+def test_heading_score_prefers_exact_term():
+    q = heading_tokens("Indebtedness")
+    exact = heading_score(q, "Indebtedness", "Definitions", "ARTICLE I DEFINITIONS")
+    longer = heading_score(q, "Permitted Indebtedness", "Definitions", "ARTICLE I DEFINITIONS")
+    assert exact == 1.0 and 0 < longer < exact
+
+
+def test_heading_score_section_title_beats_article_title():
+    q = heading_tokens("financial covenants")
+    section = heading_score(q, "", "Financial Covenants", "ARTICLE VII NEGATIVE COVENANTS")
+    sibling = heading_score(q, "", "Reserved", "ARTICLE VIII FINANCIAL COVENANTS")
+    assert section == 1.0 and sibling == pytest.approx(0.5)               # roman numeral not counted
+    assert heading_score(q, "", "Interest Rate Limitation", "ARTICLE X MISCELLANEOUS") == 0.0
+
+
+def test_long_clause_query_still_finds_a_short_matching_title():
+    q = heading_tokens("Borrower shall not permit the leverage ratio to exceed")
+    assert heading_score(q, "", "Maximum Leverage Ratio", "ARTICLE VIII FINANCIAL COVENANTS") >= 0.3
